@@ -1,0 +1,27 @@
+--- create migration
+
+npm run migration:generate --name=InitSchemaFromDatabase
+
+--- Create empty migration
+
+npx typeorm-ts-node-commonjs migration:create src/database/migrations/FixContactsSequence
+
+--- run migration
+
+npm run migration:run
+
+--- revert mirgation
+
+npm run migration:revert
+
+
+--- remove modules
+
+rm src/modules/articles/article.entity.ts
+rm -rf src/modules/articles
+
+--- create module
+
+npx nest g module modules/pdf_requests
+npx nest g service modules/pdf_requests
+npx nest g controller modules/pdf_requests

@@ -1,0 +1,13 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "assets": [
+      {
+        "include": "modules/pdf/templates/**/*",
+        "outDir": "dist/modules/pdf/templates"
+      }
+    ],
+    "watchAssets": true
+  }
+}
