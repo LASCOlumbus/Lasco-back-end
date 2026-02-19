@@ -18,10 +18,8 @@ export class PdfService {
         payload: dto,
       });
 
-      const html = renderTemplate(dto.type, {
-        data: dto.data,
-        meta: dto.meta,
-      });
+      const html = renderTemplate(dto.type, dto.data,
+        );
 
       const browser = await getBrowser();
       const page = await browser.newPage();

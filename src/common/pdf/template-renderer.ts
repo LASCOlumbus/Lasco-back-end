@@ -30,7 +30,7 @@ export function renderTemplate(
 ): string {
   const templatePath = path.join(
     getTemplatesBasePath(),
-    `${templateName}.html`,
+    `${templateName}.hbs`,
   );
 
   if (!fs.existsSync(templatePath)) {
@@ -38,6 +38,17 @@ export function renderTemplate(
   }
 
   const source = fs.readFileSync(templatePath, 'utf-8');
+  //helpers
+  Handlebars.registerHelper('eq', (a, b) => a == b);
+  Handlebars.registerHelper('for', function(from, to, incr, block) {
+    var accum = '';
+    for (var i = from; i < to; i += incr) {
+      accum += block.fn(i);
+    }
+    return accum;
+  });
+
+  //helpers
   const template = Handlebars.compile(source);
 
   return template(context);
