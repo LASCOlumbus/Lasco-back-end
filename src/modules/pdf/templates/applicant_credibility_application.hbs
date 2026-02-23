@@ -568,12 +568,150 @@ strong{
   position: relative;
   font-size: 14px;
 }
+
+
+.webcheck-waiver-PDF .frame {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.webcheck-waiver-PDF .frame-2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-5 {
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  position: relative;
+  flex: unset;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: #D3DAE0;
+}
+
+.webcheck-waiver-PDF .line {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  margin-top: -0.25px;
+}
+
+.webcheck-waiver-PDF .label-2 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 600;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-4 {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .label-3 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.text-field{
+  width: 100%;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: "Inter-Medium", Helvetica;
+}
+.text-field + .line{
+  margin-top: -10px!important;
+}
+
+.w-60{
+  width: 60%!important;
+}
+.w-70{
+  width: 70%!important;
+}
+.w-40{
+  width: 40%!important;
+}
+.w-15{
+  width: calc(15% - 5px)!important;
+}
+.w-30{
+  width: 30%!important;
+}
     </style>
   </head>
   <body>
     <div class="webcheck-waiver-PDF">
       <header class="header">
-        <div class="text-wrapper">Adult guardianship service information</div>
+        <div class="text-wrapper">Applicant's credibility application</div>
         <div class="container">
           <p class="div">Probate court of Franklin County, Ohio</p>
           <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
@@ -581,14 +719,6 @@ strong{
       </header>
       <div class="text-container">
         <div class="frame">
-          <div class="text-block">
-            <p>
-              Ohio law requires the person for whom guardianship is being sought to be visited and personally served notice of the guardianship application by a probate court investigator.
-            </p>
-            <p>
-              The information you provide below helps the Court safely notify the Prospective Ward and meet the requirements of Ohio law.
-            </p>
-          </div>
           <div class="div-2">
             <div class="inputs-container">
               <div class="input">
@@ -602,115 +732,114 @@ strong{
             </div>
             <div class="inputs-container">
               <div class="input">
-                <div class="input-top-section"><p class="label">Contact person name</p></div>
-                <div class="input-field">{{caseDetailsStep.contactName}}</div>
+                <div class="input-top-section"><p class="label">Name of applicant to be appointed guardian</p></div>
+                <div class="input-field">{{applicantInformStep.applicantName}}</div>
               </div>
               <div class="input-2">
-                <div class="input-top-section"><div class="label">Contact person telephone number</div></div>
-                <div class="input-field">{{caseDetailsStep.contactPhone}}</div>
+                <div class="input-top-section"><div class="label">Date of birth</div></div>
+                <div class="input-field">{{applicantInformStep.dob}}</div>
               </div>
             </div>
           </div>
-          <div class="text-block">
-            <p>
-              <strong>Caution:</strong> The Applicant is responsible for providing the name and phone number of someone (which may be the Applicant) who may be contacted by the court investigator during regular business hours (8:00 a.m. - 5:00 p.m.) if assistance is required to complete service.
-            </p>
-          </div>
           <div class="text-block" style="margin-top: 30px;">
-            <p>Physical location of the prospective ward.</p>
+            <p><strong>Applicant address</strong></p>
           </div>
           <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Street address of prospective ward</p></div>
-                <div class="input-field">{{wardLocationStep.streetAddress}}</div>
-              </div>
-            </div>
-            <div class="inputs-container">
-              <div class="input">
-                <div class="input-top-section"><p class="label">City</p></div>
-                <div class="input-field">{{wardLocationStep.city}}</div>
-              </div>
-              <div class="input-2">
-                <div class="input-top-section"><div class="label">State</div></div>
-                <div class="input-field">{{wardLocationStep.state}}</div>
-              </div>
-            </div>
-            <div class="inputs-container">
-              <div class="input">
-                <div class="input-top-section"><p class="label">ZIP code</p></div>
-                <div class="input-field">{{wardLocationStep.zip}}</div>
-              </div>
-              <div class="input-2">
-                <div class="input-top-section"><div class="label">Telephone number of prospective ward</div></div>
-                <div class="input-field">{{wardLocationStep.wardPhone}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="div-2" style="margin-top: 20px;">
-            <div class="inputs-container">
-              <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Does the prospective ward leave the above location on a regular basis (school, work, vacation, etc.) during the day?</p></div>
-                <div class="flex">
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardLeaveDuringDay.answer true}}✓{{/ifEquals}}
-                    </div>
-                    Yes
-                  </div>
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardLeaveDuringDay.answer false}}✓{{/ifEquals}}
-                    </div>
-                    No
-                  </div>
+                <div class="input-top-section"><p class="label">Current street address (city, zip code, state)</p></div>
+                <div class="input-field">
+                  {{applicantInformStep.applicantAddress.streetAddress}},
+                  {{applicantInformStep.applicantAddress.city}},
+                  {{applicantInformStep.applicantAddress.state}},
+                  {{applicantInformStep.applicantAddress.zip}}
                 </div>
               </div>
             </div>
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.isProspectiveWardLeaveDuringDay.explanation}}</div>
+                <div class="input-top-section"><p class="label">From when did you live at this address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.from}}</div>
               </div>
             </div>
           </div>
-          <div class="div-2" style="margin-top: 20px;">
+          <div class="text-block" style="margin-top: 30px;">
+            <p><strong>Previous address (if you live less than 5 years ar current)</strong></p>
+          </div>
+          <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Is there a situation or special circumstance of which the investigator should be aware such as weapons in the home, dangerous situations, contagious diseases, etc.?</p></div>
-                <div class="flex">
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.specialCircumstances.answer true}}✓{{/ifEquals}}
-                    </div>
-                    Yes
-                  </div>
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.specialCircumstances.answer false}}✓{{/ifEquals}}
-                    </div>
-                    No
-                  </div>
-                </div>
+                <div class="input-top-section"><p class="label">Current street address (city, zip code, state)</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[0].address}}</div>
+              </div>
+            </div>
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">From when did you live at this address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[0].from}}</div>
+              </div>
+              <div class="input">
+                <div class="input-top-section"><p class="label">To when did you live at this address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[0].to}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-block" style="margin-top: 30px;">
+            <p><strong>Previous address (if you live less than 5 years ar current)</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Current street address (city, zip code, state)</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[1].address}}</div>
+              </div>
+            </div>
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">From when did you live at this address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[1].from}}</div>
+              </div>
+              <div class="input">
+                <div class="input-top-section"><p class="label">To when did you live at this address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress.previousAddresses.[1].to}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2" style="margin-top: 40px;">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Spouse full name</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.marriage.spouseName}}</div>
+              </div>
+              <div class="input">
+                <div class="input-top-section"><p class="label">Years married</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.marriage.yearMarried}}</div>
               </div>
             </div>
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.specialCircumstances.explanation}}</div>
+                <div class="input-top-section"><p class="label">Spouse current street address (state, city, zip code, street)</p></div>
+                <div class="input-field">
+                  {{familyAndEmploymentStep.marriage.spouseStreetAddress}},
+                  {{familyAndEmploymentStep.marriage.state}},
+                  {{familyAndEmploymentStep.marriage.state}},
+                  {{familyAndEmploymentStep.marriage.zip}}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-wrapper-2"><p>PC-G-17.0C (REV. 5-2019)</p><p>Page - 1</p></div>
+      <div class="text-wrapper-2"><p>PC- G- 17.0G (REV. 5-2019)</p><p>Page - 1</p></div>
     </div>
 
 
 
     <div class="webcheck-waiver-PDF">
       <header class="header">
-        <div class="text-wrapper">Adult guardianship service information</div>
+        <div class="text-wrapper">Applicant's credibility application</div>
         <div class="container">
           <p class="div">Probate court of Franklin County, Ohio</p>
           <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
@@ -718,41 +847,230 @@ strong{
       </header>
       <div class="text-container">
         <div class="frame">
-          <div class="div-2" style="margin-top: 20px;">
+          <div class="text-block">
+            <p><strong>Employment</strong></p>
+          </div>
+          <div class="div-2">
             <div class="inputs-container">
-              <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Does the Prospective Ward speak a foreign language or have any medical issues or other communication issues which would prevent them from communicating with the investigator? </p></div>
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">Current employer</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.currentEmployer}}</div>
+              </div>
+              <div class="input w-30">
+                <div class="input-top-section"><p class="label">From when did you work here</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.from}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p><strong>Previous employer (if you work less than 5 years ar current work)</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">Previous employer</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[0].employer}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[0].from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[0].to}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p><strong>Previous employer (if you work less than 5 years ar current work)</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">Previous employer</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[1].employer}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[1].from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{familyAndEmploymentStep.employment.previousEmployers.[1].to}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2" style="margin-top: 40px;">
+            <div class="inputs-container">
+              <div class="input w-60">
+                <div class="input-top-section"><p class="label">Applicant’s bank name</p></div>
+                <div class="input-field">{{bankingInformStep.bankName}}</div>
+              </div>
+              <div class="input w-40">
+                <div class="input-top-section"><p class="label">Account type (you can check more than one)</p></div>
                 <div class="flex">
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardHasCommunicationIssues.answer true}}✓{{/ifEquals}}
+                      {{#includes bankingInformStep.accountType "checking"}}✓{{/includes}}
+                    </div>
+                    Checking
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#includes bankingInformStep.accountType "savings"}}✓{{/includes}}
+                    </div>
+                    Savings
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#includes bankingInformStep.accountType "safe_deposit_box"}}✓{{/includes}}
+                    </div>
+                    Safe deposit box
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2" data-id="1">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Has applicant ever filed bankruptcy?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverFiledBankruptcy true}}✓{{/ifEquals}}
                     </div>
                     Yes
                   </div>
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardHasCommunicationIssues.answer false}}✓{{/ifEquals}}
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverFiledBankruptcy false}}✓{{/ifEquals}}
                     </div>
                     No
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="div-2" data-id="2">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Has applicant ever filed bankruptcy?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenGarnished true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenGarnished false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" data-id="3">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Has applicant ever filed bankruptcy?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenInReceivership true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenInReceivership false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" data-id="4">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Has applicant ever filed bankruptcy?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenConvictedFelony true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantEverBeenConvictedFelony false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" data-id="5">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Has applicant ever filed bankruptcy?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantHadExperienceHandlingInvestments true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalAndFinancialHistoryStep.isApplicantHadExperienceHandlingInvestments false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.isProspectiveWardHasCommunicationIssues.explanation}}</div>
+                <div class="input-top-section"><p class="label">Explain why you check any answer "Yes"above:</p></div>
+                <div class="textarea-field">{{legalAndFinancialHistoryStep.explanation}}</div>
               </div>
             </div>
           </div>
           <div class="text-block">
             <p>
-              <strong>Caution:</strong> The hearing will not occur unless the visit is completed at least seven days prior to the scheduled hearing date, unless otherwise approved by the court. If there is a change in the location of the Prospective Ward between the time the application is filed and the hearing date, it is the Applicant’s responsibility to notify the court investigator at (614) 525-6109 or (614) 525-6296.
+              This statement is made in support of my application to be appointed Guardian in the above styled matter and the undersigned says that the facts stated in the foregoing applications are true.
             </p>
           </div>
         </div>
       </div>
-      <div class="text-wrapper-2"><p>PC-G-17.0C (REV. 5-2019)</p><p>Page - 2</p></div>
+      <section class="frame">
+        <div class="frame-2">
+          <div class="input-5">
+            <div class="text-field"></div>
+          </div>
+          <div class="frame-3">
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Signature of applicant</label>
+            </div>
+          </div>
+        </div>
+        <div class="text-wrapper-2"><p>PC- G- 17.0G (REV. 5-2019)</p><p>Page - 2</p></div>
+      </section>
     </div>
   </body>
 </html>

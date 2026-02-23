@@ -48,6 +48,20 @@ export function renderTemplate(
     return accum;
   });
 
+  Handlebars.registerHelper('includes', function (array, value, options) {
+    if (Array.isArray(array) && array.includes(value)) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+  Handlebars.registerHelper('ifEquals', function (value, compare, options) {
+    if (value === compare) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
   //helpers
   const template = Handlebars.compile(source);
 

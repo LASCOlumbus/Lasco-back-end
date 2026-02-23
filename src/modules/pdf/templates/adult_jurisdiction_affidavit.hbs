@@ -568,12 +568,159 @@ strong{
   position: relative;
   font-size: 14px;
 }
+
+
+.webcheck-waiver-PDF .frame {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.webcheck-waiver-PDF .frame-2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-5 {
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  position: relative;
+  flex: unset;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: #D3DAE0;
+}
+
+.webcheck-waiver-PDF .line {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  margin-top: -0.25px;
+}
+
+.webcheck-waiver-PDF .label-2 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 600;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-4 {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .label-3 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.text-field{
+  width: 100%;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: "Inter-Medium", Helvetica;
+}
+.text-field + .line{
+  margin-top: -10px!important;
+}
+
+.w-60{
+  width: 60%!important;
+}
+.w-70{
+  width: 70%!important;
+}
+.w-40{
+  width: 40%!important;
+}
+.w-15{
+  width: calc(15% - 5px)!important;
+}
+.w-30{
+  width: 30%!important;
+}
+
+.webcheck-waiver-pdf .input-8 {
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  position: relative;
+}
     </style>
   </head>
   <body>
     <div class="webcheck-waiver-PDF">
       <header class="header">
-        <div class="text-wrapper">Adult guardianship service information</div>
+        <div class="text-wrapper">Adult jurisdiction affidavit</div>
         <div class="container">
           <p class="div">Probate court of Franklin County, Ohio</p>
           <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
@@ -581,14 +728,6 @@ strong{
       </header>
       <div class="text-container">
         <div class="frame">
-          <div class="text-block">
-            <p>
-              Ohio law requires the person for whom guardianship is being sought to be visited and personally served notice of the guardianship application by a probate court investigator.
-            </p>
-            <p>
-              The information you provide below helps the Court safely notify the Prospective Ward and meet the requirements of Ohio law.
-            </p>
-          </div>
           <div class="div-2">
             <div class="inputs-container">
               <div class="input">
@@ -601,116 +740,135 @@ strong{
               </div>
             </div>
             <div class="inputs-container">
-              <div class="input">
-                <div class="input-top-section"><p class="label">Contact person name</p></div>
-                <div class="input-field">{{caseDetailsStep.contactName}}</div>
-              </div>
-              <div class="input-2">
-                <div class="input-top-section"><div class="label">Contact person telephone number</div></div>
-                <div class="input-field">{{caseDetailsStep.contactPhone}}</div>
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Name of applicant to be appointed guardian</p></div>
+                <div class="input-field">{{caseDetailsStep.applicantName}}</div>
               </div>
             </div>
           </div>
-          <div class="text-block">
-            <p>
-              <strong>Caution:</strong> The Applicant is responsible for providing the name and phone number of someone (which may be the Applicant) who may be contacted by the court investigator during regular business hours (8:00 a.m. - 5:00 p.m.) if assistance is required to complete service.
-            </p>
-          </div>
           <div class="text-block" style="margin-top: 30px;">
-            <p>Physical location of the prospective ward.</p>
+            <p>Affiant, being first duly sworn, states the present address of the alleged incompetent, the names of the person(s) with whom they are living, and any former addresses</p>
           </div>
           <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Street address of prospective ward</p></div>
-                <div class="input-field">{{wardLocationStep.streetAddress}}</div>
-              </div>
-            </div>
-            <div class="inputs-container">
-              <div class="input">
-                <div class="input-top-section"><p class="label">City</p></div>
-                <div class="input-field">{{wardLocationStep.city}}</div>
-              </div>
-              <div class="input-2">
-                <div class="input-top-section"><div class="label">State</div></div>
-                <div class="input-field">{{wardLocationStep.state}}</div>
-              </div>
-            </div>
-            <div class="inputs-container">
-              <div class="input">
-                <div class="input-top-section"><p class="label">ZIP code</p></div>
-                <div class="input-field">{{wardLocationStep.zip}}</div>
-              </div>
-              <div class="input-2">
-                <div class="input-top-section"><div class="label">Telephone number of prospective ward</div></div>
-                <div class="input-field">{{wardLocationStep.wardPhone}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="div-2" style="margin-top: 20px;">
-            <div class="inputs-container">
-              <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Does the prospective ward leave the above location on a regular basis (school, work, vacation, etc.) during the day?</p></div>
-                <div class="flex">
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardLeaveDuringDay.answer true}}✓{{/ifEquals}}
-                    </div>
-                    Yes
-                  </div>
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardLeaveDuringDay.answer false}}✓{{/ifEquals}}
-                    </div>
-                    No
-                  </div>
+                <div class="input-top-section"><p class="label">Current street address (city, zip code, state)</p></div>
+                <div class="input-field">
+                  {{addressInformStep.currentAddress}}
                 </div>
               </div>
             </div>
+          </div>
+          <div class="div-2">
             <div class="inputs-container">
-              <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.isProspectiveWardLeaveDuringDay.explanation}}</div>
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">With whom did you live </p></div>
+                <div class="input-field">{{addressInformStep.withWhom}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{addressInformStep.from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{addressInformStep.to}}</div>
               </div>
             </div>
           </div>
-          <div class="div-2" style="margin-top: 20px;">
+
+          <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Is there a situation or special circumstance of which the investigator should be aware such as weapons in the home, dangerous situations, contagious diseases, etc.?</p></div>
-                <div class="flex">
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.specialCircumstances.answer true}}✓{{/ifEquals}}
-                    </div>
-                    Yes
-                  </div>
-                  <div class="checkbox-wrap">
-                    <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.specialCircumstances.answer false}}✓{{/ifEquals}}
-                    </div>
-                    No
-                  </div>
+                <div class="input-top-section"><p class="label">Previous address within last 2 years (optional)</p></div>
+                <div class="input-field">
+                  {{addressInformStep.previousAddresses.[0].address}}
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">With whom did you live </p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[0].withWhom}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[0].from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[0].to}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.specialCircumstances.explanation}}</div>
+                <div class="input-top-section"><p class="label">Previous address within last 2 years (optional)</p></div>
+                <div class="input-field">
+                  {{addressInformStep.currentAddress}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">With whom did you live </p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[1].withWhom}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[1].from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[1].to}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Previous address within last 2 years (optional)</p></div>
+                <div class="input-field">
+                  {{addressInformStep.currentAddress}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input w-70">
+                <div class="input-top-section"><p class="label">With whom did you live </p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[2].withWhom}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">From</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[2].from}}</div>
+              </div>
+              <div class="input w-15">
+                <div class="input-top-section"><p class="label">To</p></div>
+                <div class="input-field">{{addressInformStep.previousAddresses.[2].to}}</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-wrapper-2"><p>PC-G-17.0C (REV. 5-2019)</p><p>Page - 1</p></div>
+      <div class="text-wrapper-2"><p>PC- G- 16.1B (REV. 8-2014)</p><p>Page - 1</p></div>
     </div>
 
 
 
     <div class="webcheck-waiver-PDF">
       <header class="header">
-        <div class="text-wrapper">Adult guardianship service information</div>
+        <div class="text-wrapper">Adult jurisdiction affidavit</div>
         <div class="container">
           <p class="div">Probate court of Franklin County, Ohio</p>
           <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
@@ -718,41 +876,158 @@ strong{
       </header>
       <div class="text-container">
         <div class="frame">
-          <div class="div-2" style="margin-top: 20px;">
+          <div class="text-block">
+            <p><strong>Does the affiant have information about any guardianship, conservatorship, or similar proceeding involving the alleged incompetent in any court?</strong></p>
+          </div>
+          <div class="div-2" data-id="5">
             <div class="inputs-container">
-              <div class="input" style="width: 100%;">
-                <div class="input-top-section"><p class="label">Does the Prospective Ward speak a foreign language or have any medical issues or other communication issues which would prevent them from communicating with the investigator? </p></div>
+              <div class="input w-40">
                 <div class="flex">
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardHasCommunicationIssues.answer true}}✓{{/ifEquals}}
+                      {{#ifEquals legalQuestionsStep.isAffiantHaveInfoAboutAnyGuardianship true}}✓{{/ifEquals}}
                     </div>
                     Yes
                   </div>
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals safetyServiceStep.isProspectiveWardHasCommunicationIssues.answer false}}✓{{/ifEquals}}
+                      {{#ifEquals legalQuestionsStep.isAffiantHaveInfoAboutAnyGuardianship false}}✓{{/ifEquals}}
                     </div>
                     No
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="div-2">
             <div class="inputs-container">
               <div class="input" style="width: 100%;">
                 <div class="input-top-section"><p class="label">If answer "Yes"  explain why</p></div>
-                <div class="textarea-field">{{safetyServiceStep.isProspectiveWardHasCommunicationIssues.explanation}}</div>
+                <div class="textarea-field">{{legalQuestionsStep.infoAboutCourtProceeding}}</div>
               </div>
             </div>
           </div>
           <div class="text-block">
             <p>
-              <strong>Caution:</strong> The hearing will not occur unless the visit is completed at least seven days prior to the scheduled hearing date, unless otherwise approved by the court. If there is a change in the location of the Prospective Ward between the time the application is filed and the hearing date, it is the Applicant’s responsibility to notify the court investigator at (614) 525-6109 or (614) 525-6296.
+              Said affiant has a continuing duty to inform the court of any proceeding concerning the alleged incompetent in this or any other state of which the affiant obtained information during this proceeding.
             </p>
           </div>
+
+          <div class="div-2" data-id="1">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Is the alleged incompetent divorced?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isAllegedIncompetentDivorced true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isAllegedIncompetentDivorced false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-2" data-id="1">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Are there any divorce proceedings currently pending?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isDivorcePending true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isDivorcePending false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Court where the divorce case is pending</p></div>
+                <div class="input-field">{{legalQuestionsStep.courtName}}</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="div-2" data-id="5">
+            <div class="inputs-container">
+              <div class="input w-40">
+                <div class="flex">
+                  <div class="input-top-section"><p class="label">Is the alleged incompetent currently subject to a continuing custody order issued in their parents’ divorce?</p></div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isAllegedIncompetentCurrently true}}✓{{/ifEquals}}
+                    </div>
+                    Yes
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals legalQuestionsStep.isAllegedIncompetentCurrently false}}✓{{/ifEquals}}
+                    </div>
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Any additional information:</p></div>
+                <div class="textarea-field">{{legalQuestionsStep.additionalInfo}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p>
+              Said affiant states that all of the foregoing statements are true. <br>Sworn to and subscribed before me a Notary Public or Deputy Clerk of the Probate Court
+            </p>
+          </div>
+
         </div>
       </div>
-      <div class="text-wrapper-2"><p>PC-G-17.0C (REV. 5-2019)</p><p>Page - 2</p></div>
+
+      <section class="frame">
+        <div class="frame-2">
+          <div class="frame-3">
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Date - month - year</label>
+            </div>
+          </div>
+          <div class="frame-3">
+            <div class="input-4">
+              <div class="text-field">{{caseDetailsStep.applicantName}}</div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Affiant/Applicant</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Notary Public/Deputy Clerk</label>
+            </div>
+          </div>
+        </div>
+        <div class="text-wrapper-2"><p>PC- G- 16.1B (REV. 8-2014)</p><p>Page - 2</p></div>
+      </section>
     </div>
   </body>
 </html>
