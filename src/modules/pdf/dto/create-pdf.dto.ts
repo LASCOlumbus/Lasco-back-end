@@ -228,56 +228,81 @@ export class CreatePdfDto {
   "type": "prospective_wards_financial_information",
   "data": {
     "caseDetailsStep": {
-      "inTheMatterOfTheGuardianshipOf": "Something",
-      "caseNumber": 123123
+      "inTheMatterOfTheGuardianshipOf": "asd asd",
+      "caseNumber": "123123"
     },
     "benefitsStep": {
-      "benefit": ["social_security","pers","other"],
-      "socialSecurity": { 
-        "representativePayeeName": "Test name", 
-        "socialSecuritySize": "123" 
+      "benefit": [
+        "socialSecurity",
+        "VABenefits",
+        "medicaid",
+        "otherInsuranceBenefits",
+        "otherPension",
+        "railroadRetirement",
+        "PERS",
+        "other"
+      ],
+      "socialSecurity": {
+        "representativePayeeName": "dsdadsdadas",
+        "socialSecuritySize": 23
       },
       "PERS": {
-        "size": 123
+        "size": 233
       },
       "VABenefits": {
-        "size": "12332"
+        "size": 3232
       },
       "railroadRetirement": {
-        "size": 1233
+        "size": 12
       },
       "medicaid": {
-        "isWardMedicaidFacilityResident": false
+        "isWardMedicaidFacilityResident": true
       },
       "otherInsuranceBenefits": {
-        "description": "test description"
+        "description": "dsd sd df dgfg"
       },
       "otherPension": {
-        "description": "test desc..."
+        "description": "sasd"
+      },
+      "other": {
+        "describeOtherPension": 123,
+        "sourceOfOtherPension": "sdasd sad sa"
       }
     },
     "financialAccountStep": {
-      "accounts": [{ 
-        "institution": "test", 
-        "type": "A", 
-        "estimatedBalance": "123123" 
-      }]
+      "accounts": [
+        {
+          "institution": "asd asdada sd",
+          "type": "trust_account",
+          "estimatedBalance": 2323
+        },
+        {
+          "institution": "asdsad",
+          "type": "retirement",
+          "estimatedBalance": 2323
+        }
+      ]
     },
     "propertyStep": {
-      "isProspectiveWardRealEstateOwner": null,
-      "prospectiveWardReceivesRentalIncome": null,
-      "realEstateAddress": "address...",
-      "rentalIncomeAmount": "123"
+      "isProspectiveWardRealEstateOwner": true,
+      "prospectiveWardReceivesRentalIncome": true,
+      "realEstateAddress": "d asd sadad sa d",
+      "rentalIncomeAmount": 232
     },
     "assetsInterests": {
-      "prospectiveWardBeneficiaryOf": [],
-      "identifyingInformation": "123123221",
-      "sourceOfIncomeOrAsset": "work",
-      "amountOfIncomeOrAsset": "123123",
-      "hasSufficientFundsToPayCourtCosts": false,
-      "doesNotHaveSufficientFundsToPayCourtCosts": false
+      "prospectiveWardBeneficiaryOf": [
+        "decedentEstate",
+        "otherTrust",
+        "specialNeedsTrust"
+      ],
+      "identifyingInformation": "asd asdad",
+      "sourceOfIncomeOrAsset": "asd s",
+      "amountOfIncomeOrAsset": "232",
+      "hasSufficientFundsToPayCourtCosts": true,
+      "doesNotHaveSufficientFundsToPayCourtCosts": true
     }
-  }
+  },
+  "meta": "extra metadata"
 }
 */
 
@@ -353,6 +378,84 @@ export class CreatePdfDto {
       "isApplicantAgreed": false
     }
   }
+}
+
+
+
+{
+  "type": "application_for_appointment_of_guardian_of_alleged_incompetent",
+  "data": {
+    "caseDetailsStep": {
+      "guardianName": "Artem Tkachyk",
+      "caseNumber": "1232323",
+      "relationshipToWard": "Successor appointment"
+    },
+    "wardInformStep": {
+      "wardName": "asd asd sa",
+      "wardDob": "2026-03-11T22:00:00.000Z",
+      "wardAddress": "some address",
+      "explanationNeedsOfGuardian": "because",
+      "isWardNeedsInterpreterForEnglish": true,
+      "wardSpeakLanguage": "ak",
+      "wardPrescriptions": "asd as asdas d",
+      "isWardHasMilitaryService": true,
+      "militaryService": {
+        "militaryId": "asd asd",
+        "branchService": "frfrf",
+        "startDateOfService": "2026-02-28T22:00:00.000Z",
+        "endDateOfService": "2026-03-30T21:00:00.000Z"
+      }
+    },
+    "assetsAndIncomeStep": {
+      "estimatedValuePersonalProperty": 46,
+      "estimatedValueRealEstate": 340,
+      "annualRentsReceived": 34,
+      "otherAnnualIncome": 43,
+      "bondAmount": 545,
+      "publicPrivateAssistance": "qw sdasd sad s",
+      "isWardHasRepresentativePayee": true,
+      "payeeName": "sd a dasd",
+      "payeeAddress": "asd sa asd as"
+    },
+    "guardianshipTypeStep": {
+      "guardianResponsibility": "Personal and medical needs",
+      "typeGuardianship": [
+        "Person only",
+        "Emergency"
+      ],
+      "limitedPowersRequested": "",
+      "timePeriodRequested": "Limited to a specific time period",
+      "specifyTimePeriod": {
+        "start": "2026-03-26T22:00:00.000Z",
+        "end": "2026-03-30T21:00:00.000Z"
+      }
+    },
+    "applicantInformStep": {
+      "applicantName": "asd sad asd asd asd sa d",
+      "applicantDob": "2026-02-01T22:00:00.000Z",
+      "applicantPhone": "+380689983456",
+      "applicantEmail": "asdasd@asd.asd",
+      "applicantAddress": "asd asdsd",
+      "applicantRelationshipToWard": "asd asd",
+      "isApplicantRequiringInterpreter": true,
+      "applicantSpeakLanguage": "ab"
+    },
+    "legalDeclarationsStep": {
+      "isApplicantHasBeenChargedWithViolence": true,
+      "conviction": {
+        "convictionName": "sda asd",
+        "convictionDate": "2026-03-04T22:00:00.000Z",
+        "convictionPlace": "asdasdsa asd as"
+      },
+      "isGuardianHasBeenNominatedInWriting": true,
+      "nominatedPersonName": "asd asd asd",
+      "isNominatedPersonContactInfoListedOnForm15": true,
+      "isGuardianNominatedDocumentAttached": null,
+      "isNotAdmin": null,
+      "isApplicantAgreed": true
+    }
+  },
+  "meta": "extra metadata"
 }
 */
 

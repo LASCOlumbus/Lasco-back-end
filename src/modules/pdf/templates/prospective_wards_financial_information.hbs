@@ -770,7 +770,7 @@ strong{
                 </div>
                 <div class="input ml-auto">
                   <div class="input-field">
-                    {{benefitsStep.socialSecurity.representativePayeeName}}
+                    {{benefitsStep.socialSecurity.socialSecuritySize}}
                   </div>
                 </div>
                 <p class="label f-auto">per month</p>
@@ -783,7 +783,7 @@ strong{
               <div class="input" style="width: 100%;">
                 <div class="input-top-section"><p class="label">Representative payee name for Social security (if there is one):</p></div>
                 <div class="input-field">
-                  {{benefitsStep.socialSecurity.socialSecuritySize}}
+                  {{benefitsStep.socialSecurity.representativePayeeName}}
                 </div>
               </div>
             </div>
@@ -857,7 +857,7 @@ strong{
                 </div>
                 <div class="input ml-auto">
                   <div class="input-field">
-                    {{benefitsStep.otherPension.size}}
+                    {{benefitsStep.other.describeOtherPension}}
                   </div>
                 </div>
                 <p class="label f-auto">per month</p>
@@ -870,7 +870,7 @@ strong{
               <div class="input" style="width: 100%;">
                 <div class="input-top-section"><p class="label">Source of other pension(s)</p></div>
                 <div class="input-field">
-                  {{benefitsStep.otherPension.description}}
+                  {{benefitsStep.other.sourceOfOtherPension}}
                 </div>
               </div>
             </div>
@@ -888,7 +888,7 @@ strong{
             <div class="flex fullw pl-24">
               <div class="checkbox-wrap">
                 <div class="checkbox">
-                  {{#if benefitsStep.isWardMedicaidFacilityResident}}✓{{/if}}
+                  {{#if benefitsStep.medicaid.isWardMedicaidFacilityResident}}✓{{/if}}
                 </div>
                 The prospective ward is eligible for Medicaid and lives in a nursing home or other facility which receives all of the prospective ward's income.
               </div>
@@ -924,7 +924,7 @@ strong{
                 </div>
                 <div class="input fullw">
                   <div class="input-field">
-                    {{benefitsStep.other.description}}
+                    {{benefitsStep.otherPension.description}}
                   </div>
                 </div>
               </div>
@@ -1089,19 +1089,19 @@ strong{
               <div class="flex fullw">
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "social_neds_trust"}}✓{{/includes}}
+                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "specialNeedsTrust"}}✓{{/includes}}
                   </div>
                   Special needs trust
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "any_other_trust"}}✓{{/includes}}
+                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "otherTrust"}}✓{{/includes}}
                   </div>
                   Any other trust
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "decedents_estate"}}✓{{/includes}}
+                    {{#includes assetsInterests.prospectiveWardBeneficiaryOf "decedentEstate"}}✓{{/includes}}
                   </div>
                   Decedent’s estate
                 </div>

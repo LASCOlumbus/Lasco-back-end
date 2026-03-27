@@ -762,13 +762,13 @@ strong{
                 <p class="label f-auto">Relationship to the ward (check only one)</p>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#ifEquals caseDetailsStep.relationshipToWard "initialAppointment"}}✓{{/ifEquals}}
+                    {{#ifEquals caseDetailsStep.relationshipToWard "Initial appointment"}}✓{{/ifEquals}}
                   </div>
                   Initial appointment
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#ifEquals caseDetailsStep.relationshipToWard "successorAppointment"}}✓{{/ifEquals}}
+                    {{#ifEquals caseDetailsStep.relationshipToWard "Successor appointment"}}✓{{/ifEquals}}
                   </div>
                   Successor appointment
                 </div>
@@ -977,64 +977,64 @@ strong{
               <div class="flex fullw">
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "theProspectiveWardsPerson"}}✓{{/ifEquals}}
+                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "Personal and medical needs"}}✓{{/ifEquals}}
                   </div>
-                  The prospective ward's person 
+                  Personal and medical needs
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "theProspectiveWardsProperty"}}✓{{/ifEquals}}
+                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "Financial decisions and managing money and property"}}✓{{/ifEquals}}
                   </div>
-                  The prospective ward's property 
+                  Financial decisions and managing money and property
                 </div>
               </div>
             </div>
           </div>
           <div class="text-block">
-            <p><strong>Wha does the type of guardianship applied for?</strong></p>
+            <p><strong>What does the type of guardianship applied for?</strong></p>
           </div>
           <div class="div-2">
             <div class="inputs-container">
               <div class="flex fullw">
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "personAndEstate"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Person and estate"}}✓{{/includes}}
                   </div>
                   Person and estate
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "personOnly"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Person only"}}✓{{/includes}}
                   </div>
                   Person only
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "estateOnly"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Estate only"}}✓{{/includes}}
                   </div>
                   Estate only
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "emergency"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Emergency"}}✓{{/includes}}
                   </div>
                   Emergency
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "interim"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Interim"}}✓{{/includes}}
                   </div>
                   Interim
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "nonLimited"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Non-limited"}}✓{{/includes}}
                   </div>
                   Non-limited
                 </div>
                 <div class="checkbox-wrap f-auto">
                   <div class="checkbox">
-                    {{#includes guardianshipTypeStep.typeGuardianship "limited"}}✓{{/includes}}
+                    {{#includes guardianshipTypeStep.typeGuardianship "Limited"}}✓{{/includes}}
                   </div>
                   Limited
                 </div>
@@ -1056,13 +1056,13 @@ strong{
                 <div class="flex" style="padding-right: 24px;">
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "indefinite"}}✓{{/ifEquals}}
+                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "Indefinite"}}✓{{/ifEquals}}
                     </div>
                     Indefinite
                   </div>
                   <div class="checkbox-wrap">
                     <div class="checkbox">
-                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "limited"}}✓{{/ifEquals}}
+                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "Limited to a specific time period"}}✓{{/ifEquals}}
                     </div>
                     Limited to a specific time period
                   </div>
@@ -1328,7 +1328,7 @@ strong{
             <div class="input-4">
               <div class="text-field"></div>
               <div class="line"></div>
-              <label for="applicant-signature" class="label-2">Applicant signature</label>
+              <label for="applicant-signature" class="label-2">Applicant Email</label>
             </div>
           </div>
         </div>
