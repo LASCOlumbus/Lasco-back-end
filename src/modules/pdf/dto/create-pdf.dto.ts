@@ -225,84 +225,83 @@ export class CreatePdfDto {
 //prospective_wards_financial_information
 /*
 {
-  "type": "prospective_wards_financial_information",
-  "data": {
-    "caseDetailsStep": {
-      "inTheMatterOfTheGuardianshipOf": "asd asd",
-      "caseNumber": "123123"
-    },
-    "benefitsStep": {
-      "benefit": [
-        "socialSecurity",
-        "VABenefits",
-        "medicaid",
-        "otherInsuranceBenefits",
-        "otherPension",
-        "railroadRetirement",
-        "PERS",
-        "other"
-      ],
-      "socialSecurity": {
-        "representativePayeeName": "dsdadsdadas",
-        "socialSecuritySize": 23
+   "type":"prospective_wards_financial_information",
+   "data":{
+      "caseDetailsStep":{
+         "inTheMatterOfTheGuardianshipOf":"some name",
+         "caseNumber":"123123"
       },
-      "PERS": {
-        "size": 233
+      "benefitsStep":{
+         "benefit":[
+            "socialSecurity",
+            "other",
+            "PERS",
+            "VABenefits",
+            "railroadRetirement",
+            "medicaid",
+            "otherInsuranceBenefits",
+            "otherPension"
+         ],
+         "socialSecurity":{
+            "representativePayeeName":"asds asd",
+            "socialSecuritySize":2
+         },
+         "PERS":{
+            "size":3
+         },
+         "VABenefits":{
+            "size":4
+         },
+         "railroadRetirement":{
+            "size":5
+         },
+         "medicaid":{
+            "isWardMedicaidFacilityResident":true
+         },
+         "otherInsuranceBenefits":{
+            "description":"insurance benefits description"
+         },
+         "otherPension":{
+            "describeOtherPensionSize":6,
+            "sourceOfOtherPension":"other pension description"
+         },
+         "other":{
+            "description":"other benefits description"
+         }
       },
-      "VABenefits": {
-        "size": 3232
+      "financialAccountStep":{
+         "accounts":[
+            {
+               "institution":"asdsad sa",
+               "type":"retirement",
+               "estimatedBalance":232
+            },
+            {
+               "institution":"sa dasd sad",
+               "type":"brokerage_investment",
+               "estimatedBalance":2323
+            }
+         ]
       },
-      "railroadRetirement": {
-        "size": 12
+      "propertyStep":{
+         "isProspectiveWardRealEstateOwner":true,
+         "prospectiveWardReceivesRentalIncome":false,
+         "realEstateAddress":"asd sad ",
+         "rentalIncomeAmount":0
       },
-      "medicaid": {
-        "isWardMedicaidFacilityResident": true
-      },
-      "otherInsuranceBenefits": {
-        "description": "dsd sd df dgfg"
-      },
-      "otherPension": {
-        "description": "sasd"
-      },
-      "other": {
-        "describeOtherPension": 123,
-        "sourceOfOtherPension": "sdasd sad sa"
+      "assetsInterests":{
+         "prospectiveWardBeneficiaryOf":[
+            "decedentEstate",
+            "otherTrust"
+         ],
+         "identifyingInformation":"sddasd as d",
+         "sourceOfIncomeOrAsset":"asdasd",
+         "amountOfIncomeOrAsset":"123213",
+         "hasSufficientFundsToPayCourtCosts":false,
+         "doesNotHaveSufficientFundsToPayCourtCosts":true
       }
-    },
-    "financialAccountStep": {
-      "accounts": [
-        {
-          "institution": "asd asdada sd",
-          "type": "trust_account",
-          "estimatedBalance": 2323
-        },
-        {
-          "institution": "asdsad",
-          "type": "retirement",
-          "estimatedBalance": 2323
-        }
-      ]
-    },
-    "propertyStep": {
-      "isProspectiveWardRealEstateOwner": true,
-      "prospectiveWardReceivesRentalIncome": true,
-      "realEstateAddress": "d asd sadad sa d",
-      "rentalIncomeAmount": 232
-    },
-    "assetsInterests": {
-      "prospectiveWardBeneficiaryOf": [
-        "decedentEstate",
-        "otherTrust",
-        "specialNeedsTrust"
-      ],
-      "identifyingInformation": "asd asdad",
-      "sourceOfIncomeOrAsset": "asd s",
-      "amountOfIncomeOrAsset": "232",
-      "hasSufficientFundsToPayCourtCosts": true,
-      "doesNotHaveSufficientFundsToPayCourtCosts": true
-    }
-  },
-  "meta": "extra metadata"
+   },
+   "meta":"extra metadata"
 }
 */
 
