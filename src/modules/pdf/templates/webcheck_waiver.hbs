@@ -1,611 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <title>Webcheck Waiver - Franklin County Probate Court</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
-.text-area{
-  width: 100%;
-  height: 30px;
-  border: 1px solid #B9C3CD;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
-  padding: 0 10px;
-  font-size: 12px;
-  font-family: "Inter-Medium", Helvetica;
-}
-.text-field{
-  width: 100%;
-  height: 20px;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-family: "Inter-Medium", Helvetica;
-}
-.text-field + .line{
-  margin-top: -10px!important;
-}
-.line {
-  position: relative;
-  width: 100%;
-  height: 1px;
-  background: #D3DAE0;
-}
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-a {
-  text-decoration: none;
-}
-* {
-  box-sizing: border-box;
-}
-.webcheck-waiver-pdf {
-  width: 100%;
-  aspect-ratio: 0.71;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  padding-bottom: 20px;
-}
-
-.webcheck-waiver-pdf .header {
-  display: flex;
-  width: 100%;
-  height: 59px;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  background-color: var(--tokens-surface-input-hover);
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-width: 0.5px;
-  border-bottom-style: solid;
-  border-left-style: none;
-  border-color: var(--tokens-border-secondary);
-}
-
-.webcheck-waiver-pdf .text-wrapper {
-  position: relative;
-  width: fit-content;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 150%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.webcheck-waiver-pdf .container {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .div {
-  position: relative;
-  width: fit-content;
-  margin-top: -0.50px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--tokens-text-primary);
-  font-size: 10px;
-  letter-spacing: 0;
-  line-height: 150%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.webcheck-waiver-pdf .judge-jeffrey-d {
-  position: relative;
-  width: fit-content;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--tokens-text-primary);
-  font-size: 10px;
-  letter-spacing: 0;
-  line-height: 150%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.webcheck-waiver-pdf .text-container {
-  padding: 0 20px;
-  width: 100%;
-  margin-top: 24px;
-  gap: 16px;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.webcheck-waiver-pdf .text-block {
-  gap: 6px;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.webcheck-waiver-pdf .you-hereby-certify {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  margin-top: -0.50px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 150%;
-  text-align: left;
-}
-
-.webcheck-waiver-pdf .further-you {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 150%;
-  text-align: left;
-}
-
-.webcheck-waiver-pdf .inputs-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .input {
-  flex-direction: column;
-  width: 50%;
-  align-items: flex-start;
-  gap: 3px;
-  z-index: 1;
-  display: flex;
-  position: relative;
-}
-
-.webcheck-waiver-pdf .input-top-section {
-  display: flex;
-  align-items: center;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .label {
-  position: relative;
-  display: -webkit-box;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin-top: -0.50px;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 600;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 150%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.webcheck-waiver-pdf .input-field {
-  align-items: center;
-  gap: var(--primitives-spacings-400);
-  padding: 8px;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: var(--tokens-surface-input);
-  border-radius: 1px;
-  border: 0.5px solid;
-  border-color: var(--tokens-border-primary);
-  display: flex;
-  position: relative;
-}
-
-.webcheck-waiver-pdf .input-2 {
-  flex-direction: column;
-  width: 50%;
-  align-items: flex-start;
-  gap: 3px;
-  z-index: 0;
-  display: flex;
-  position: relative;
-}
-
-.webcheck-waiver-pdf .frame {
-  display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-  position: relative;
-  margin-top: auto;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.webcheck-waiver-pdf .frame-2 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .input-3 {
-  flex-direction: column;
-  width: 250px;
-  align-items: center;
-  gap: 10px;
-  display: flex;
-  position: relative;
-}
-
-.webcheck-waiver-pdf .line {
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  height: 1px;
-  margin-top: -0.25px;
-}
-
-.webcheck-waiver-pdf .label-2 {
-  position: relative;
-  display: -webkit-box;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 600;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 150%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.webcheck-waiver-pdf .frame-3 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .input-4 {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.webcheck-waiver-pdf .label-3 {
-  position: relative;
-  display: -webkit-box;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: var(--tokens-text-primary);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 120%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.webcheck-waiver-pdf .text-wrapper-2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: var(--tokens-text-secondary);
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: 120%;
-}
-/* Inject original CSS code here */
-/* Inject original CSS code here */
-
-:root {
-  --body-m-regular-font-family: "Inter", Helvetica;
-  --body-m-regular-font-weight: 400;
-  --body-m-regular-font-size: 18px;
-  --body-m-regular-letter-spacing: 0px;
-  --body-m-regular-line-height: 24px;
-  --body-m-regular-font-style: normal;
-  --body-m-medium-font-family: "Inter", Helvetica;
-  --body-m-medium-font-weight: 500;
-  --body-m-medium-font-size: 18px;
-  --body-m-medium-letter-spacing: 0px;
-  --body-m-medium-line-height: 24px;
-  --body-m-medium-font-style: normal;
-  --body-s-regular-font-family: "Inter", Helvetica;
-  --body-s-regular-font-weight: 400;
-  --body-s-regular-font-size: 16px;
-  --body-s-regular-letter-spacing: 0px;
-  --body-s-regular-line-height: 24px;
-  --body-s-regular-font-style: normal;
-  --body-s-medium-font-family: "Inter", Helvetica;
-  --body-s-medium-font-weight: 500;
-  --body-s-medium-font-size: 16px;
-  --body-s-medium-letter-spacing: 0px;
-  --body-s-medium-line-height: 24px;
-  --body-s-medium-font-style: normal;
-  --body-caption-regular-font-family: "Inter", Helvetica;
-  --body-caption-regular-font-weight: 400;
-  --body-caption-regular-font-size: 14px;
-  --body-caption-regular-letter-spacing: 0px;
-  --body-caption-regular-line-height: 20px;
-  --body-caption-regular-font-style: normal;
-  --button-small-font-family: "Inter", Helvetica;
-  --button-small-font-weight: 600;
-  --button-small-font-size: 14px;
-  --button-small-letter-spacing: 0px;
-  --button-small-line-height: 20px;
-  --button-small-font-style: normal;
-  --button-medium-font-family: "Inter", Helvetica;
-  --button-medium-font-weight: 600;
-  --button-medium-font-size: 16px;
-  --button-medium-letter-spacing: 0px;
-  --button-medium-line-height: 24px;
-  --button-medium-font-style: normal;
-  --button-big-font-family: "Inter", Helvetica;
-  --button-big-font-weight: 600;
-  --button-big-font-size: 18px;
-  --button-big-letter-spacing: 0px;
-  --button-big-line-height: 24px;
-  --button-big-font-style: normal;
-  --header-h1-font-family: "Inter", Helvetica;
-  --header-h1-font-weight: 600;
-  --header-h1-font-size: 32px;
-  --header-h1-letter-spacing: 0px;
-  --header-h1-line-height: 40px;
-  --header-h1-font-style: normal;
-  --header-h2-font-family: "Inter", Helvetica;
-  --header-h2-font-weight: 600;
-  --header-h2-font-size: 24px;
-  --header-h2-letter-spacing: 0px;
-  --header-h2-line-height: 32px;
-  --header-h2-font-style: normal;
-  --header-h3-font-family: "Inter", Helvetica;
-  --header-h3-font-weight: 600;
-  --header-h3-font-size: 20px;
-  --header-h3-letter-spacing: 0px;
-  --header-h3-line-height: 28px;
-  --header-h3-font-style: normal;
-  --header-h4-font-family: "Inter", Helvetica;
-  --header-h4-font-weight: 600;
-  --header-h4-font-size: 18px;
-  --header-h4-letter-spacing: 0px;
-  --header-h4-line-height: 24px;
-  --header-h4-font-style: normal;
-  --header-h5-font-family: "Inter", Helvetica;
-  --header-h5-font-weight: 600;
-  --header-h5-font-size: 16px;
-  --header-h5-letter-spacing: 0px;
-  --header-h5-line-height: 20px;
-  --header-h5-font-style: normal;
-  --body-small-font-family: "Onest", Helvetica;
-  --body-small-font-weight: 400;
-  --body-small-font-size: 14px;
-  --body-small-letter-spacing: 0px;
-  --body-small-line-height: 20px;
-  --body-small-font-style: normal;
-  --colors-grey-0: rgba(255, 255, 255, 1);
-  --colors-grey-50: rgba(242, 244, 246, 1);
-  --colors-grey-100: rgba(231, 235, 239, 1);
-  --colors-grey-200: rgba(237, 240, 243, 1);
-  --colors-grey-300: rgba(211, 218, 224, 1);
-  --colors-grey-400: rgba(185, 195, 205, 1);
-  --colors-grey-500: rgba(151, 167, 183, 1);
-  --colors-grey-600: rgba(108, 120, 136, 1);
-  --colors-grey-700: rgba(69, 81, 96, 1);
-  --colors-grey-800: rgba(42, 52, 64, 1);
-  --colors-grey-900: rgba(15, 33, 61, 1);
-  --colors-grey-950: rgba(5, 13, 25, 1);
-  --colors-navy-blue-50: rgba(240, 245, 250, 1);
-  --colors-navy-blue-100: rgba(217, 228, 240, 1);
-  --colors-navy-blue-200: rgba(184, 205, 226, 1);
-  --colors-navy-blue-300: rgba(148, 178, 208, 1);
-  --colors-navy-blue-400: rgba(110, 146, 186, 1);
-  --colors-navy-blue-500: rgba(73, 115, 164, 1);
-  --colors-navy-blue-600: rgba(24, 68, 130, 1);
-  --colors-navy-blue-700: rgba(18, 55, 100, 1);
-  --colors-navy-blue-800: rgba(13, 43, 78, 1);
-  --colors-navy-blue-900: rgba(7, 28, 51, 1);
-  --colors-green-600: rgba(57, 152, 31, 1);
-  --colors-green-200: rgba(57, 152, 31, 0.1);
-  --colors-red-200: rgba(198, 60, 37, 0.1);
-  --colors-red-600: rgba(198, 60, 37, 1);
-  --tokens-surface-primary: var(--colors-grey-0);
-  --tokens-surface-contrast: var(--colors-grey-900);
-  --tokens-surface-card-bg: var(--colors-grey-200);
-  --tokens-surface-input: var(--colors-grey-0);
-  --tokens-surface-input-hover: var(--colors-grey-50);
-  --tokens-surface-positive: var(--colors-green-600);
-  --tokens-surface-negative: var(--colors-red-600);
-  --tokens-surface-negative-low: var(--colors-red-200);
-  --tokens-text-primary: var(--colors-grey-900);
-  --tokens-text-secondary: var(--colors-grey-600);
-  --tokens-text-tertiary: var(--colors-grey-500);
-  --tokens-text-contrast: var(--colors-grey-0);
-  --tokens-text-contrast-secondary: var(--colors-grey-200);
-  --tokens-text-brand: var(--colors-navy-blue-600);
-  --tokens-text-negative: var(--colors-red-600);
-  --tokens-button-primary: var(--colors-navy-blue-600);
-  --tokens-button-primary-hover: var(--colors-navy-blue-700);
-  --tokens-button-primary-pressed: var(--colors-navy-blue-800);
-  --tokens-button-secondary: var(--colors-grey-50);
-  --tokens-button-secondary-hover: var(--colors-grey-100);
-  --tokens-button-secondary-pressed: var(--colors-grey-200);
-  --tokens-button-tetriary: var(--colors-grey-600);
-  --tokens-icon-primary: var(--colors-grey-500);
-  --tokens-icon-primary-hover: var(--colors-grey-600);
-  --tokens-icon-primary-pressed: var(--colors-grey-700);
-  --tokens-icon-secondary: var(--colors-grey-600);
-  --tokens-icon-brand: var(--colors-navy-blue-500);
-  --tokens-icon-negative: var(--colors-red-600);
-  --tokens-icon-contrast: var(--colors-grey-0);
-  --tokens-icon-contrast-low: var(--colors-grey-900);
-  --tokens-border-primary: var(--colors-grey-400);
-  --tokens-border-primary-hover: var(--colors-grey-500);
-  --tokens-border-primary-pressed: var(--colors-navy-blue-400);
-  --tokens-border-secondary: var(--colors-grey-300);
-  --tokens-border-contract-low: var(--colors-grey-200);
-  --tokens-border-input-active: var(--colors-navy-blue-400);
-  --tokens-border-negative: var(--colors-red-600);
-  --tokens-text-secondary-duplicate: var(--primitives-colors-gray-800);
-  --primitives-spacings-400: 8px;
-  --primitives-colors-gray-800: rgba(107, 109, 114, 1);
-  --primitives-spacings-1300: 60px;
-  --theme-spacing-2: var(--scaling-100-2);
-  --scaling-100-2: 8px;
-}
-
-
+        {{{inlineResetStyles}}}
+        {{{inlineStyles}}}
     </style>
-  </head>
-  <body>
-    <main class="webcheck-waiver-pdf">
-      <header class="header">
-        <h1 class="text-wrapper">Webcheck waiver</h1>
-        <div class="container">
-          <p class="div">Probate court of Franklin County, Ohio</p>
-          <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
-        </div>
-      </header>
-      <section class="text-container">
-        <div class="text-block">
-          <p class="you-hereby-certify">
-            You hereby certify that you have given the Franklin County Probate Court permission to obtain all criminal
-            history information pertaining to me in the files of the Ohio Bureau of Criminal Identification and
-            Investigation (BCI&amp;I).
-          </p>
-          <p class="further-you">
-            Further, you understand that your criminal history information received from BCI&amp;I will be filed as a
-            confidential record in the. Court's record keeping system and you will not receive a copy.
-          </p>
-        </div>
-        <div class="inputs-container">
-          <div class="input">
-            <div class="input-top-section">
-              <label for="guardianship-matter" class="label">In the matter of the guardianship of</label>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="text--right txt txt--xs">PC-1.FF (Rev. 1-2021)</div>
+            <div class="text--center">
+                <h2 class="mt-16 uppercase">PROBATE COURT OF FRANKLIN COUNTY, OHIO</h2>
+                <h4 class="uppercase">JEFFREY D. MACKEY, JUDGE</h4>
             </div>
-            <div class="text-area">{{webcheckWaiverStep.guardianName}}</div>
-          </div>
-          <div class="input-2">
-            <div class="input-top-section">
-              <label for="case-number" class="label">Case number</label>
+        </header>
+        <div class="content">
+            <div class="flex v--end h--start gap-4">
+                <div class="txt txt--m uppercase w-auto">
+                    <p>IN THE MATTER OF <br>THE GUARDIANSHIP OF</p>
+                </div>
+                <div class="input fullw">{{webcheckWaiverStep.guardianName}}</div>
             </div>
-            <div class="text-area">{{webcheckWaiverStep.caseNumber}}</div>
-          </div>
+            <div class="flex v--end h--start gap-4 mt-16">
+                <div class="txt txt--m uppercase w-auto">
+                    <p>CASE NO.</p>
+                </div>
+                <div class="input w-auto mw-200">{{webcheckWaiverStep.caseNumber}}</div>
+            </div>
+            <div class="text--center mt-20">
+                <h2>WEBCHECK WAIVER</h2>
+            </div>
+            <div class="text--left mt-20">
+                <div class="txt txt--s">
+                    <p>I hereby certify that I have given the Franklin County Probate Court permission to obtain all criminal history information pertaining to me in the files of the Ohio Bureau of Criminal Identification and Investigation (BCI&I).</p>
+                </div>
+                <div class="txt txt--s mt-16 pt-16">
+                    <p>Further, I understand that my criminal history information received from BCI&I will be filed as a confidential record in the Court’s record keeping system and I will not receive a copy.</p>
+                </div>
+            </div>
+            <div class="mt-100 pt-60 grid col-2 gap-20">
+                <div class="col">
+                    <div class="row">
+                        <div class="input fullw"></div>
+                        <div class="txt txt--xs mt-4">Date</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="input fullw"></div>
+                        <div class="txt txt--xs mt-4">Applicant's Signature</div>
+                    </div>
+                    <div class="row mt-10">
+                        <div class="input fullw">{{webcheckWaiverStep.applicantName}}</div>
+                        <div class="txt txt--xs mt-4">Typed or Printed Name</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-      <section class="frame">
-        <div class="frame-2">
-          <div class="input-3">
-            <div class="text-field"></div>
-            <div class="line"></div>
-            <label for="date-field" class="label-2">Date</label>
-          </div>
-          <div class="frame-3">
-            <div class="input-4">
-              <div class="text-field">{{webcheckWaiverStep.applicantName}}</div>
-              <div class="line"></div>
-              <label for="applicant-signature" class="label-2">Applicant name</label>
+
+        <footer class="mt-auto">
+            <div class="text--center fw-600 txt txt--s uppercase">
+                FRANKLIN COUNTY FORM 1.FF - WEBCHECK WAIVER
             </div>
-            <div class="input-4">
-              <div class="text-field"></div>
-              <div class="line"></div>
-              <label for="applicant-signature" class="label-2">Applicant's signature</label>
-            </div>
-          </div>
-        </div>
-        <footer class="text-wrapper-2">PC-1.FF (Rev. 1-2021)</footer>
-      </section>
-    </main>
-  </body>
+            <div class="txt txt--s">fw</div>
+        </footer>
+    </div>
+</body>
 </html>

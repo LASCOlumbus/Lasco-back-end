@@ -1,0 +1,44 @@
+@import url('./reset.css');
+
+.page{
+	padding: 30px 40px;
+	width: 100%;
+  	aspect-ratio: 0.71;
+  	display: flex;
+  	flex-direction: column;
+  	background-color: #ffffff;
+}
+.content{
+	margin-top: 20px;
+	margin-block: 20px;
+}
+.input{
+	min-height: 22px;
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	font-size: 16px;
+	font-style: italic;
+	display: inline-block;
+}
+.w-auto{
+	width: auto;
+	flex: 0 0 auto;
+}
+.fullw{
+	width: 100%;
+}
+.mw-200{
+	min-width: 200px;
+}
+.mw-300{
+	min-width: 300px;
+}
+.mw-320{
+	min-width: 320px;
+}
+.mw-400{
+	min-width: 400px;
+}
+.flex .fullw{
+	flex-grow: 1;
+}

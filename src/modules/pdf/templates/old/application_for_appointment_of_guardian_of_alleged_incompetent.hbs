@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <style>
+            @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: "Inter-Regular", Helvetica;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --body-m-regular-font-family: "Inter", Helvetica;
+  --body-m-regular-font-weight: 400;
+  --body-m-regular-font-size: 18px;
+  --body-m-regular-letter-spacing: 0px;
+  --body-m-regular-line-height: 24px;
+  --body-m-regular-font-style: normal;
+  --body-m-medium-font-family: "Inter", Helvetica;
+  --body-m-medium-font-weight: 500;
+  --body-m-medium-font-size: 18px;
+  --body-m-medium-letter-spacing: 0px;
+  --body-m-medium-line-height: 24px;
+  --body-m-medium-font-style: normal;
+  --body-s-regular-font-family: "Inter", Helvetica;
+  --body-s-regular-font-weight: 400;
+  --body-s-regular-font-size: 16px;
+  --body-s-regular-letter-spacing: 0px;
+  --body-s-regular-line-height: 24px;
+  --body-s-regular-font-style: normal;
+  --body-s-medium-font-family: "Inter", Helvetica;
+  --body-s-medium-font-weight: 500;
+  --body-s-medium-font-size: 16px;
+  --body-s-medium-letter-spacing: 0px;
+  --body-s-medium-line-height: 24px;
+  --body-s-medium-font-style: normal;
+  --body-caption-regular-font-family: "Inter", Helvetica;
+  --body-caption-regular-font-weight: 400;
+  --body-caption-regular-font-size: 14px;
+  --body-caption-regular-letter-spacing: 0px;
+  --body-caption-regular-line-height: 20px;
+  --body-caption-regular-font-style: normal;
+  --button-small-font-family: "Inter", Helvetica;
+  --button-small-font-weight: 600;
+  --button-small-font-size: 14px;
+  --button-small-letter-spacing: 0px;
+  --button-small-line-height: 20px;
+  --button-small-font-style: normal;
+  --button-medium-font-family: "Inter", Helvetica;
+  --button-medium-font-weight: 600;
+  --button-medium-font-size: 16px;
+  --button-medium-letter-spacing: 0px;
+  --button-medium-line-height: 24px;
+  --button-medium-font-style: normal;
+  --button-big-font-family: "Inter", Helvetica;
+  --button-big-font-weight: 600;
+  --button-big-font-size: 18px;
+  --button-big-letter-spacing: 0px;
+  --button-big-line-height: 24px;
+  --button-big-font-style: normal;
+  --header-h1-font-family: "Inter", Helvetica;
+  --header-h1-font-weight: 600;
+  --header-h1-font-size: 32px;
+  --header-h1-letter-spacing: 0px;
+  --header-h1-line-height: 40px;
+  --header-h1-font-style: normal;
+  --header-h2-font-family: "Inter", Helvetica;
+  --header-h2-font-weight: 600;
+  --header-h2-font-size: 24px;
+  --header-h2-letter-spacing: 0px;
+  --header-h2-line-height: 32px;
+  --header-h2-font-style: normal;
+  --header-h3-font-family: "Inter", Helvetica;
+  --header-h3-font-weight: 600;
+  --header-h3-font-size: 20px;
+  --header-h3-letter-spacing: 0px;
+  --header-h3-line-height: 28px;
+  --header-h3-font-style: normal;
+  --header-h4-font-family: "Inter", Helvetica;
+  --header-h4-font-weight: 600;
+  --header-h4-font-size: 18px;
+  --header-h4-letter-spacing: 0px;
+  --header-h4-line-height: 24px;
+  --header-h4-font-style: normal;
+  --header-h5-font-family: "Inter", Helvetica;
+  --header-h5-font-weight: 600;
+  --header-h5-font-size: 16px;
+  --header-h5-letter-spacing: 0px;
+  --header-h5-line-height: 20px;
+  --header-h5-font-style: normal;
+  --colors-grey-0: rgba(255, 255, 255, 1);
+  --colors-grey-50: rgba(242, 244, 246, 1);
+  --colors-grey-100: rgba(231, 235, 239, 1);
+  --colors-grey-200: rgba(237, 240, 243, 1);
+  --colors-grey-300: rgba(211, 218, 224, 1);
+  --colors-grey-400: rgba(185, 195, 205, 1);
+  --colors-grey-500: rgba(151, 167, 183, 1);
+  --colors-grey-600: rgba(108, 120, 136, 1);
+  --colors-grey-700: rgba(69, 81, 96, 1);
+  --colors-grey-800: rgba(42, 52, 64, 1);
+  --colors-grey-900: rgba(15, 33, 61, 1);
+  --colors-grey-950: rgba(5, 13, 25, 1);
+  --colors-navy-blue-50: rgba(240, 245, 250, 1);
+  --colors-navy-blue-100: rgba(217, 228, 240, 1);
+  --colors-navy-blue-200: rgba(184, 205, 226, 1);
+  --colors-navy-blue-300: rgba(148, 178, 208, 1);
+  --colors-navy-blue-400: rgba(110, 146, 186, 1);
+  --colors-navy-blue-500: rgba(73, 115, 164, 1);
+  --colors-navy-blue-600: rgba(24, 68, 130, 1);
+  --colors-navy-blue-700: rgba(18, 55, 100, 1);
+  --colors-navy-blue-800: rgba(13, 43, 78, 1);
+  --colors-navy-blue-900: rgba(7, 28, 51, 1);
+  --colors-green-600: rgba(57, 152, 31, 1);
+  --colors-green-200: rgba(57, 152, 31, 0.1);
+  --colors-red-200: rgba(198, 60, 37, 0.1);
+  --colors-red-600: rgba(198, 60, 37, 1);
+  --tokens-surface-primary: var(--colors-grey-0);
+  --tokens-surface-contrast: var(--colors-grey-900);
+  --tokens-surface-card-bg: var(--colors-grey-200);
+  --tokens-surface-input: var(--colors-grey-0);
+  --tokens-surface-input-hover: var(--colors-grey-50);
+  --tokens-surface-positive: var(--colors-green-600);
+  --tokens-surface-negative: var(--colors-red-600);
+  --tokens-surface-negative-low: var(--colors-red-200);
+  --tokens-text-primary: var(--colors-grey-900);
+  --tokens-text-secondary: var(--colors-grey-600);
+  --tokens-text-tertiary: var(--colors-grey-500);
+  --tokens-text-contrast: var(--colors-grey-0);
+  --tokens-text-contrast-secondary: var(--colors-grey-200);
+  --tokens-text-brand: var(--colors-navy-blue-600);
+  --tokens-text-negative: var(--colors-red-600);
+  --tokens-button-primary: var(--colors-navy-blue-600);
+  --tokens-button-primary-hover: var(--colors-navy-blue-700);
+  --tokens-button-primary-pressed: var(--colors-navy-blue-800);
+  --tokens-button-secondary: var(--colors-grey-50);
+  --tokens-button-secondary-hover: var(--colors-grey-100);
+  --tokens-button-secondary-pressed: var(--colors-grey-200);
+  --tokens-button-tetriary: var(--colors-grey-600);
+  --tokens-icon-primary: var(--colors-grey-500);
+  --tokens-icon-primary-hover: var(--colors-grey-600);
+  --tokens-icon-primary-pressed: var(--colors-grey-700);
+  --tokens-icon-secondary: var(--colors-grey-600);
+  --tokens-icon-brand: var(--colors-navy-blue-500);
+  --tokens-icon-negative: var(--colors-red-600);
+  --tokens-icon-contrast: var(--colors-grey-0);
+  --tokens-icon-contrast-low: var(--colors-grey-900);
+  --tokens-border-primary: var(--colors-grey-400);
+  --tokens-border-primary-hover: var(--colors-grey-500);
+  --tokens-border-primary-pressed: var(--colors-navy-blue-400);
+  --tokens-border-secondary: var(--colors-grey-300);
+  --tokens-border-contract-low: var(--colors-grey-200);
+  --tokens-border-input-active: var(--colors-navy-blue-400);
+  --tokens-border-negative: var(--colors-red-600);
+  --primitives-spacings-400: 8px;
+}
+
+
+.webcheck-waiver-PDF {
+  width: 100%;
+  aspect-ratio: 0.71;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.webcheck-waiver-PDF .header {
+  display: flex;
+  width: 100%;
+  height: 59px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: var(--tokens-surface-input-hover);
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-width: 0.5px;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-color: var(--tokens-border-secondary);
+}
+
+.webcheck-waiver-PDF .text-wrapper {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 160%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-align: left;
+}
+
+.webcheck-waiver-PDF .container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.50px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--tokens-text-primary);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .judge-jeffrey-d {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--tokens-text-primary);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .text-container {
+  padding: 0 20px;
+  width: 100%;
+  height: 400px;
+  margin-top: 24px;
+  gap: 30px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.webcheck-waiver-PDF .div-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: 8px;
+}
+
+.webcheck-waiver-PDF .text-block {
+  gap: 6px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  text-align: left;
+}
+
+.webcheck-waiver-PDF .text-block p {
+  position: relative;
+  margin-top: -0.50px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  text-align: left;
+}
+
+.webcheck-waiver-PDF .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .inputs-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input {
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+  gap: 3px;
+  z-index: 1;
+  display: flex;
+  position: relative;
+}
+
+.webcheck-waiver-PDF .input-top-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .label {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: -0.50px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 600;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .input-field {
+  align-items: center;
+  gap: var(--primitives-spacings-400);
+  padding: 0 10px;
+  height: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--tokens-surface-input);
+  border-radius: 1px;
+  border: 0.5px solid;
+  border-color: var(--tokens-border-primary);
+  display: flex;
+  position: relative;
+  font-size: 12px;
+}
+.webcheck-waiver-PDF .textarea-field {
+  align-items: center;
+  gap: var(--primitives-spacings-400);
+  padding: 6px 10px;
+  height: 70px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--tokens-surface-input);
+  border-radius: 1px;
+  border: 0.5px solid;
+  border-color: var(--tokens-border-primary);
+  display: flex;
+  position: relative;
+  font-size: 12px;
+}
+
+.webcheck-waiver-PDF .input-2 {
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+  gap: 3px;
+  z-index: 0;
+  display: flex;
+  position: relative;
+}
+strong{
+  font-weight: 600;
+}
+
+.webcheck-waiver-PDF .input-3 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.webcheck-waiver-PDF .input-field-2 {
+  display: flex;
+  align-items: center;
+  gap: var(--primitives-spacings-400);
+  padding: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--tokens-surface-input);
+  border-radius: 1px;
+  overflow: hidden;
+  border: 0.5px solid;
+  border-color: var(--tokens-border-primary);
+}
+
+.webcheck-waiver-PDF .placeholder-label {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: -0.50px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--tokens-text-secondary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .inputs-container-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  row-gap: 12px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.webcheck-waiver-PDF .input-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  position: relative;
+  z-index: 1;
+  width: calc(50% - 3px);
+}
+
+.webcheck-waiver-PDF .label-wrapper {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  border: none;
+  background: none;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: -0.50px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding: 0;
+}
+
+.webcheck-waiver-PDF .input-5 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  flex: 1;
+  flex-grow: 1;
+  z-index: 0;
+  display: flex;
+  position: relative;
+}
+
+.webcheck-waiver-PDF .text-wrapper-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 40px;
+  margin-top: auto;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-secondary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 4px;
+}
+.checkbox-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12px;
+}
+.checkbox {
+  align-items: center;
+  gap: var(--primitives-spacings-400);
+  height: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  align-self: stretch;
+  width: 14px;
+  flex: 0 0 auto;
+  background-color: var(--tokens-surface-input);
+  border-radius: 1px;
+  border: 0.5px solid;
+  border-color: var(--tokens-border-primary);
+  display: flex;
+  position: relative;
+  font-size: 14px;
+}
+
+
+.webcheck-waiver-PDF .frame {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.webcheck-waiver-PDF .frame-2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-5 {
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  position: relative;
+  flex: unset;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: #D3DAE0;
+}
+
+.webcheck-waiver-PDF .line {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  margin-top: -0.25px;
+}
+
+.webcheck-waiver-PDF .label-2 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 600;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.webcheck-waiver-PDF .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .input-4 {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.webcheck-waiver-PDF .label-3 {
+  position: relative;
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-primary);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.text-field{
+  width: 100%;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: "Inter-Medium", Helvetica;
+}
+.text-field + .line{
+  margin-top: -10px!important;
+}
+
+.w-60{
+  width: 60%!important;
+}
+.w-70{
+  width: 70%!important;
+}
+.w-40{
+  width: 40%!important;
+}
+.w-15{
+  width: calc(15% - 5px)!important;
+}
+.w-30{
+  width: 30%!important;
+}
+
+.fullw{
+  width: 100%!important;
+}
+.f-auto{
+  flex: 0 0 auto!important;
+}
+.ml-auto{
+  margin-left: auto!important;
+}
+.h--between{
+  justify-content: space-between!important;
+}
+
+.webcheck-waiver-pdf .input-8 {
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  position: relative;
+}
+.pl-24{
+  padding-left: 24px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="webcheck-waiver-PDF">
+      <header class="header">
+        <div class="text-wrapper">Application for appointment of guardian of alleged incompetent</div>
+        <div class="container">
+          <p class="div">Probate court of Franklin County, Ohio</p>
+          <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
+        </div>
+      </header>
+      <div class="text-container">
+        <div class="frame">
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">In the matter of the guardianship of</p></div>
+                <div class="input-field">{{caseDetailsStep.guardianName}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Case number</div></div>
+                <div class="input-field">{{caseDetailsStep.caseNumber}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <p class="label f-auto">Relationship to the ward (check only one)</p>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals caseDetailsStep.relationshipToWard "Initial appointment"}}✓{{/ifEquals}}
+                  </div>
+                  Initial appointment
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals caseDetailsStep.relationshipToWard "Successor appointment"}}✓{{/ifEquals}}
+                  </div>
+                  Successor appointment
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" style="margin-top: 30px;">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Full name of prospective ward</p></div>
+                <div class="input-field">{{wardInformStep.wardName}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Prospective ward date of birth</div></div>
+                <div class="input-field">{{wardInformStep.wardDob}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Current address of prospective ward</p></div>
+                <div class="input-field">
+                  {{wardInformStep.wardAddress}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">Describe why the prospective ward needs a guardian?</p></div>
+                <div class="textarea-field">
+                  {{wardInformStep.explanationNeedsOfGuardian}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <p class="label f-auto">Does the prospective ward require an interpreter to understand english?</p>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if wardInformStep.isWardNeedsInterpreterForEnglish}}✓{{/if}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals wardInformStep.isWardNeedsInterpreterForEnglish false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">If answer "Yes" what's the language?</p></div>
+                <div class="input-field">
+                  {{wardInformStep.wardSpeakLanguage}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input" style="width: 100%;">
+                <div class="input-top-section"><p class="label">List the prospective ward’s prescription and over-the-counter medications</p></div>
+                <div class="textarea-field">
+                  {{wardInformStep.wardPrescriptions}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" style="margin-top: 40px;">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <p class="label f-auto">Has the prospective ward had military service?</p>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if wardInformStep.isWardHasMilitaryService}}✓{{/if}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals wardInformStep.isWardHasMilitaryService false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Military ID of prospective ward</p></div>
+                <div class="input-field">{{wardInformStep.militaryService.militaryId}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Branch of service</div></div>
+                <div class="input-field">{{wardInformStep.militaryService.branchService}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Start dates of service</p></div>
+                <div class="input-field">{{wardInformStep.militaryService.startDateOfService}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">End dates of service</div></div>
+                <div class="input-field">{{wardInformStep.militaryService.endDateOfService}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Estimated value of personal property</p></div>
+                <div class="input-field">{{assetsAndIncomeStep.estimatedValuePersonalProperty}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Estimated value of real estate</div></div>
+                <div class="input-field">{{assetsAndIncomeStep.estimatedValueRealEstate}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Annual rents received</div></div>
+                <div class="input-field">{{assetsAndIncomeStep.annualRentsReceived}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-wrapper-2"><p>PC- G- 16.1B (REV. 8-2014)</p><p>Page - 1</p></div>
+    </div>
+
+
+
+    <div class="webcheck-waiver-PDF">
+      <header class="header">
+        <div class="text-wrapper">Application for appointment of guardian of alleged incompetent</div>
+        <div class="container">
+          <p class="div">Probate court of Franklin County, Ohio</p>
+          <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
+        </div>
+      </header>
+      <div class="text-container">
+        <div class="frame">
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Annual rents received</p></div>
+                <div class="input-field">{{assetsAndIncomeStep.otherAnnualIncome}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Bond amount offered by the applicant</div></div>
+                <div class="input-field">{{assetsAndIncomeStep.bondAmount}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input fullw">
+                <div class="input-top-section"><p class="label">Which public or private assistance does prospective ward receive?</p></div>
+                <div class="input-field">{{assetsAndIncomeStep.publicPrivateAssistance}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <p class="label f-auto">Does the prospective ward have a representative payee?</p>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals assetsAndIncomeStep.isWardHasRepresentativePayee true}}✓{{/ifEquals}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals assetsAndIncomeStep.isWardHasRepresentativePayee false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input fullw">
+                <div class="input-top-section"><p class="label">If yes, list representative payee name & address:</p></div>
+                <div class="textarea-field">{{assetsAndIncomeStep.payeeName}}, {{assetsAndIncomeStep.payeeAddress}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p><strong>What should the guardian be responsible for? (check only one)</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "Personal and medical needs"}}✓{{/ifEquals}}
+                  </div>
+                  Personal and medical needs
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals guardianshipTypeStep.guardianResponsibility "Financial decisions and managing money and property"}}✓{{/ifEquals}}
+                  </div>
+                  Financial decisions and managing money and property
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p><strong>What does the type of guardianship applied for?</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Person and estate"}}✓{{/includes}}
+                  </div>
+                  Person and estate
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Person only"}}✓{{/includes}}
+                  </div>
+                  Person only
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Estate only"}}✓{{/includes}}
+                  </div>
+                  Estate only
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Emergency"}}✓{{/includes}}
+                  </div>
+                  Emergency
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Interim"}}✓{{/includes}}
+                  </div>
+                  Interim
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Non-limited"}}✓{{/includes}}
+                  </div>
+                  Non-limited
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#includes guardianshipTypeStep.typeGuardianship "Limited"}}✓{{/includes}}
+                  </div>
+                  Limited
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input fullw">
+                <div class="input-top-section"><p class="label">If limited guardianship applied for, tell what is the limited powers requested?</p></div>
+                <div class="textarea-field">{{guardianshipTypeStep.limitedPowersRequested}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input f-auto w-auto" style="width: auto;">
+                <div class="input-top-section f-auto w-auto"><p class="label">Time period requested</p></div>
+                <div class="flex" style="padding-right: 24px;">
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "Indefinite"}}✓{{/ifEquals}}
+                    </div>
+                    Indefinite
+                  </div>
+                  <div class="checkbox-wrap">
+                    <div class="checkbox">
+                      {{#ifEquals guardianshipTypeStep.timePeriodRequested "Limited to a specific time period"}}✓{{/ifEquals}}
+                    </div>
+                    Limited to a specific time period
+                  </div>
+                </div>
+              </div>
+              <div class="input ml-auto fullw">
+                <div class="input-top-section"><p class="label">Specify the time period, if limited to a specific period</p></div>
+                <div class="input-field">
+                  {{guardianshipTypeStep.specifyTimePeriod.start}}
+                  {{#if guardianshipTypeStep.specifyTimePeriod.end}} - {{guardianshipTypeStep.specifyTimePeriod.end}}{{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2" style="margin-top: 24px;">
+            <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Full name of applicant</p></div>
+                <div class="input-field">{{applicantInformStep.applicantName}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Applicant date of birth</div></div>
+                <div class="input-field">{{applicantInformStep.applicantDob}}</div>
+              </div>
+            </div>
+          </div>
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Applicant phone number</p></div>
+                <div class="input-field">{{applicantInformStep.applicantPhone}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Applicant email address</div></div>
+                <div class="input-field">{{applicantInformStep.applicantEmail}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Applicant’s current address</p></div>
+                <div class="input-field">{{applicantInformStep.applicantAddress}}</div>
+              </div>
+              <div class="input-2">
+                <div class="input-top-section"><div class="label">Applicant’s relationship to the prospective ward</div></div>
+                <div class="input-field">{{applicantInformStep.applicantRelationshipToWard}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block">
+            <p><strong>Does the applicant require an interpreter to understand English?</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if applicantInformStep.isApplicantRequiringInterpreter}}✓{{/if}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals applicantInformStep.isApplicantRequiringInterpreter false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+                <div class="flex fullw" style="align-items: flex-end; margin-top: 0; padding-left: 20px;">
+                  <div class="input-top-section f-auto w-auto" style="width: auto; flex: 0 0 auto; margin-top: 0;"><p class="label" style="font-weight: 400;">If yes, what's the language?</p></div>
+                  <div class="text-wrappeer fullw" style="font-size: 12px;">
+                    {{applicantInformStep.applicantSpeakLanguage}}
+                    <div class="line fullw" style="width: 100%; align-self: unset; margin-top: 0;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="text-wrapper-2"><p>PC- G- 16.1B (REV. 8-2014)</p><p>Page - 2</p></div>
+    </div>
+
+
+
+
+
+    <div class="webcheck-waiver-PDF">
+      <header class="header">
+        <div class="text-wrapper">Application for appointment of guardian of alleged incompetent</div>
+        <div class="container">
+          <p class="div">Probate court of Franklin County, Ohio</p>
+          <p class="judge-jeffrey-d">Judge: Jeffrey D. Mackey</p>
+        </div>
+      </header>
+      <div class="text-container">
+        <div class="frame">
+          <div class="div-2">
+            <p class="label f-auto">Has the applicant been charged with or convicted of a crime involving theft, physical violence, sexual abuse, alcohol abuse, or substance abuse?</p>
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isApplicantHasBeenChargedWithViolence}}✓{{/if}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals legalDeclarationsStep.isApplicantHasBeenChargedWithViolence false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input">
+                <div class="input-top-section"><p class="label">Charge or conviction</p></div>
+                <div class="input-field">{{legalDeclarationsStep.conviction.convictionName}}</div>
+              </div>
+              <div class="input">
+                <div class="input-top-section"><div class="label">Date of conviction</div></div>
+                <div class="input-field">{{legalDeclarationsStep.conviction.convictionDate}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input fullw">
+                <div class="input-top-section"><p class="label">Place of conviction</p></div>
+                <div class="input-field">{{legalDeclarationsStep.conviction.convictionPlace}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw">
+                <p class="label f-auto">Has a guardian been nominated in writing, in a will or power of attorney?</p>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isGuardianHasBeenNominatedInWriting}}✓{{/if}}
+                  </div>
+                  Yes
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#ifEquals legalDeclarationsStep.isGuardianHasBeenNominatedInWriting false}}✓{{/ifEquals}}
+                  </div>
+                  No
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="input fullw">
+                <div class="input-top-section"><p class="label">If answer "Yes" provide the name of nominated person:</p></div>
+                <div class="textarea-field">{{legalDeclarationsStep.nominatedPersonName}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-block" style="margin-top: 30px;">
+            <p><strong>Please check the items you are providing or confirming</strong></p>
+          </div>
+          <div class="div-2">
+            <div class="inputs-container">
+              <div class="flex fullw" style="flex-direction: column; align-items: flex-start!important;
+              gap: 10px">
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isNominatedPersonContactInfoListedOnForm15}}✓{{/if}}
+                  </div>
+                  The nominated person’s contact information is listed on Form 15.0 – Next of Kin.
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isGuardianNominatedDocumentAttached}}✓{{/if}}
+                  </div>
+                  A copy of the document which nominates the guardian is attached.
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isNotAdmin}}✓{{/if}}
+                  </div>
+                  I am not an administrator, executor, or fiduciary of an estate in which the Prospective Ward is interested.
+                </div>
+                <div class="checkbox-wrap f-auto">
+                  <div class="checkbox">
+                    {{#if legalDeclarationsStep.isApplicantAgreed}}✓{{/if}}
+                  </div>
+                  I (applicant) represents that the address provided below is the Applicant's permanent address and acknowledges the requirement that the Court be notified of any change of address. Removal may result from failure to comply with this requirement.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <section class="frame">
+        <div class="frame-2">
+          <div class="frame-3">
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Attorney for applicant's signature</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Type of printed name</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Address</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">City, State, Zip code</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Telephone number</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Attorney registration no.</label>
+            </div>
+          </div>
+          <div class="frame-3">
+            <div class="input-4">
+              <div class="text-field">{{caseDetailsStep.applicantName}}</div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Applicant signature</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Type of printed name</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Address</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">City, State, Zip code</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Telephone number</label>
+            </div>
+            <div class="input-4">
+              <div class="text-field"></div>
+              <div class="line"></div>
+              <label for="applicant-signature" class="label-2">Applicant Email</label>
+            </div>
+          </div>
+        </div>
+        <div class="text-wrapper-2"><p>PC- G- 16.1B (REV. 8-2014)</p><p>Page - 3</p></div>
+      </section>
+    </div>
+  </body>
+</html>

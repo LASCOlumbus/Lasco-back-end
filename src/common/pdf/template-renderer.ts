@@ -28,8 +28,10 @@ export function renderTemplate(
   templateName: string,
   context: Record<string, any>,
 ): string {
+  const templatesBasePath = getTemplatesBasePath();
+
   const templatePath = path.join(
-    getTemplatesBasePath(),
+    templatesBasePath,
     `${templateName}.hbs`,
   );
 
@@ -38,6 +40,24 @@ export function renderTemplate(
   }
 
   const source = fs.readFileSync(templatePath, 'utf-8');
+  const cssPath = path.join(
+    templatesBasePath,
+    'css',
+    'style.css',
+  );
+
+  const resetPass = path.join(
+    templatesBasePath,
+    'css',
+    'reset.css',
+  );
+
+  const css = fs.existsSync(cssPath)
+    ? fs.readFileSync(cssPath, 'utf-8')
+    : '';
+  const cssReset = fs.existsSync(resetPass)
+    ? fs.readFileSync(resetPass, 'utf-8')
+    : '';
   //helpers
   Handlebars.registerHelper('eq', (a, b) => a == b);
   Handlebars.registerHelper('for', function(from, to, incr, block) {
@@ -65,5 +85,9 @@ export function renderTemplate(
   //helpers
   const template = Handlebars.compile(source);
 
-  return template(context);
+  return template({
+    ...context, 
+    inlineResetStyles: cssReset,
+    inlineStyles: css,
+  });
 }
