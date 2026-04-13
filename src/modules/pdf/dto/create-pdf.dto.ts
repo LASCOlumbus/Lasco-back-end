@@ -74,11 +74,11 @@ export class CreatePdfDto {
         "explanation": ""
       },
       "specialCircumstances": {
-        "answer": "yes",
+        "answer": true,
         "explanation": "Because something... bla bla blsa"
       },
       "isProspectiveWardHasCommunicationIssues": {
-        "answer": "no",
+        "answer": false,
         "explanation": ""
       }
     }
@@ -103,14 +103,16 @@ export class CreatePdfDto {
           "isRelativeUnder18": false,
           "relationship": "Child",
           "address": "Some address",
-          "zip": 123321
+          "zip": 123321,
+          "waiverSigned": true
         },
         {
           "fullName": "Some name 2",
           "isRelativeUnder18": false,
           "relationship": "Spouse",
           "address": "Some address 2",
-          "zip": 123321
+          "zip": 123321,
+          "waiverSigned": false
         }
       ]
     }
