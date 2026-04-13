@@ -38,6 +38,9 @@
 .fullw{
 	width: 100%;
 }
+.mw-150{
+	min-width: 150px;
+}
 .mw-200{
 	min-width: 200px;
 }

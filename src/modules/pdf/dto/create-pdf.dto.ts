@@ -127,7 +127,8 @@ export class CreatePdfDto {
   "data": {
     "caseDetailsStep": {
       "guardianName": "John",
-      "caseNumber": 12312
+      "caseNumber": 12312,
+      "nameOfProspectiveWard": "Someone"
     },
     "applicantInformStep": {
       "applicantName": "Some name",
@@ -137,13 +138,13 @@ export class CreatePdfDto {
         "city": "NY",
         "state": "NY",
         "zip": 123123,
-        "from": null,
+        "from": "231232",
         "isSameAddressLast5Years": null,
         "previousAddresses": [
           {
             "address": "Some prev address",
-            "from": null,
-            "to": null
+            "from": "32323",
+            "to": "123 32 3"
           }
         ]
       }
@@ -181,7 +182,7 @@ export class CreatePdfDto {
       "isApplicantEverBeenInReceivership": true,
       "isApplicantEverBeenConvictedFelony": null,
       "isApplicantHadExperienceHandlingInvestments": null,
-      "explanation": ""
+      "explanation": "ASD AS DSAD SAD ASD "
     }
   }
 }
