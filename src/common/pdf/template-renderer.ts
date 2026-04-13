@@ -75,6 +75,19 @@ export function renderTemplate(
     return options.inverse(this);
   });
 
+  Handlebars.registerHelper(
+    'or',
+    function (...args) {
+      const options = args.pop();
+
+      const hasTruthy = args.some(Boolean);
+
+      return hasTruthy
+        ? options.fn(this)
+        : options.inverse(this);
+    },
+  );
+
   Handlebars.registerHelper('ifEquals', function (value, compare, options) {
     if (value === compare) {
       return options.fn(this);

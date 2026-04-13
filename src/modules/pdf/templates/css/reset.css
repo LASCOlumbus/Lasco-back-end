@@ -115,7 +115,7 @@ h4{
 	font-weight: 700;
 }
 strong, b{
-	font-weight: 700;
+	font-weight: 700!important;
 }
 i, em{
 	font-style: italic;
@@ -138,6 +138,9 @@ i, em{
 }
 .uppercase{
 	text-transform: uppercase;
+}
+.underline{
+	text-decoration: underline;
 }
 
 .pt-4{
@@ -344,6 +347,18 @@ table th:first-child{
 }
 table td{
 	padding-bottom: 8px;
+}
+
+.table-wrap.bordered table{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+.table-wrap.bordered table td{
+	padding: 4px;
+	border: 1px solid black;
+}
+.table-wrap.bordered table td:empty{
+	padding-top: 20px;
 }
 
 

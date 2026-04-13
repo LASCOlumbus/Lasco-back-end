@@ -34,9 +34,13 @@
 .w-auto{
 	width: auto;
 	flex: 0 0 auto;
+	max-width: calc(100% - 50px);
 }
 .fullw{
 	width: 100%;
+}
+.mw-100{
+	min-width: 100px;
 }
 .mw-150{
 	min-width: 150px;
