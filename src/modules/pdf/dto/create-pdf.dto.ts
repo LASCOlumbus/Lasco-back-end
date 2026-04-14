@@ -220,6 +220,7 @@ export class CreatePdfDto {
       "courtName": "Court name",
       "isAllegedIncompetentCurrently": null,
       "additionalInfo": "Some info"
+      "isAllegedIncompetentCurrently": true
     }
   }
 }
@@ -425,7 +426,7 @@ export class CreatePdfDto {
         "Person only",
         "Emergency"
       ],
-      "limitedPowersRequested": "",
+      "limitedPowersRequested": "test",
       "timePeriodRequested": "Limited to a specific time period",
       "specifyTimePeriod": {
         "start": "2026-03-26T22:00:00.000Z",

@@ -58,6 +58,9 @@
 .gap-4{
 	gap: 4px!important;
 }
+.gap-6{
+	gap: 6px!important;
+}
 .gap-8{
 	gap: 8px!important;
 }
@@ -85,6 +88,9 @@
 	font-size: inherit;
 	font-weight: inherit;
 	line-height: inherit;
+}
+.txt--xxs{
+	font-size: 10px;
 }
 .txt--xs{
 	font-size: 12px;
@@ -134,7 +140,13 @@ i, em{
 	grid-template-columns: repeat(3, 1fr);
 }
 .col-4{
+	grid-template-columns: repeat(4, 1fr);
+}
+.col-5{
 	grid-template-columns: repeat(5, 1fr);
+}
+.col-6{
+	grid-template-columns: repeat(6, 1fr);
 }
 .uppercase{
 	text-transform: uppercase;
@@ -359,6 +371,29 @@ table td{
 }
 .table-wrap.bordered table td:empty{
 	padding-top: 20px;
+}
+
+.lh-100{
+	line-height: 100%!important;
+}
+.lh-110{
+	line-height: 110%!important;
+}
+.lh-120{
+	line-height: 120%!important;
+}
+.lh-130{
+	line-height: 130%!important;
+}
+.lh-140{
+	line-height: 140%!important;
+}
+.lh-150{
+	line-height: 150%!important;
+}
+
+.ml-0{
+	margin-left: 0!important;
 }
 
 

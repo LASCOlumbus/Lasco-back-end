@@ -20,6 +20,9 @@
 	font-style: italic;
 	display: inline-block;
 }
+.input.dotted{
+	border-bottom: 1px dotted black;
+}
 .checkbox{
 	width: 15px;
 	height: 15px;
@@ -31,6 +34,14 @@
 	color: black;
 	flex: 0 0 15px;
 }
+.txt .checkbox{
+	display: inline-flex;
+	margin: 0 6px -2px 10px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .w-auto{
 	width: auto;
 	flex: 0 0 auto;
@@ -38,6 +49,9 @@
 }
 .fullw{
 	width: 100%;
+}
+.mw-80{
+	min-width: 80px;
 }
 .mw-100{
 	min-width: 100px;
@@ -61,6 +75,9 @@
 	flex-grow: 1;
 }
 
+.w-50{
+	width: calc(50% - 6px);
+}
 .w-55{
 	width: calc(55% - 6px);
 }
@@ -72,6 +89,9 @@
 }
 .w-25{
 	width: calc(25% - 6px);
+}
+.w-30{
+	width: calc(30% - 6px);
 }
 
 
