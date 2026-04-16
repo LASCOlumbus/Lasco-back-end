@@ -334,7 +334,10 @@
                   </div>
                 </div>
                 <div class="pl-20">
-                  <div class="input fullw mt-8"></div>
+                  <div class="input fullw mt-8">
+                    {{guardianshipTypeStep.specifyTimePeriod.start}}
+                    {{#if guardianshipTypeStep.specifyTimePeriod.end}} - {{guardianshipTypeStep.specifyTimePeriod.end}}{{/if}}
+                  </div>
                 </div>
               </div>
 
