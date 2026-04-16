@@ -117,16 +117,13 @@
                     <p>
                       <span class="checkbox">
                       {{#or wardInformStep.isWardNeedsInterpreterForEnglish applicantInformStep.isApplicantRequiringInterpreter}}
-                        ✓
-                      {{/or}}
-                      </span>
-                      No
-                      {{#or wardInformStep.isWardNeedsInterpreterForEnglish applicantInformStep.isApplicantRequiringInterpreter}}
                         
                       {{else}}
                       ✓
-                      {{/or}} 
-                      <span class="checkbox">{{#if wardInformStep.isWardNeedsInterpreterForEnglish}}✓{{/if}}</span>Yes; 
+                      {{/or}}
+                      </span>
+                      No 
+                      <span class="checkbox">{{#or wardInformStep.isWardNeedsInterpreterForEnglish applicantInformStep.isApplicantRequiringInterpreter}}✓{{/or}}</span>Yes; 
                     &nbsp;&nbsp; If yes, who requires an interpreter?</p>
                   </div>
                   <div class="input fullw">
