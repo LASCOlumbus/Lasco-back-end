@@ -20,6 +20,9 @@
 	font-style: italic;
 	display: inline-block;
 }
+.input.small-text{
+	font-size: 13px;
+}
 .input.dotted{
 	border-bottom: 1px dotted black;
 }

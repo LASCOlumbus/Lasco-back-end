@@ -13,7 +13,7 @@
 <body>
     <div class="page">
         <header>
-            <div class="text--right txt txt--xs">PC-G-17.0C (Rev. 5-2019)</div>
+            <div class="text--right txt txt--xs">PC-G-17.0G (Rev. 5-2019)</div>
             <div class="text--center">
                 <h2 class="mt-16 uppercase">PROBATE COURT OF FRANKLIN COUNTY, OHIO</h2>
                 <h4 class="uppercase">JEFFREY D. MACKEY, JUDGE</h4>
@@ -58,7 +58,7 @@
               <div class="flex v--end h--between gap-4">
                 <div class="input fullw"></div>
                 <div class="txt txt--s w-auto">From</div>
-                <div class="input mw-200">{{applicantInformStep.applicantAddress.from}}</div>
+                <div class="input mw-200 small-text w-auto">{{applicantInformStep.applicantAddress.from}}</div>
               </div>
 
               <div class="flex v--end h--betweengap-4">
@@ -68,7 +68,7 @@
               <div class="flex v--end h--between gap-4">
                 <div class="input fullw">{{applicantInformStep.applicantAddress.previousAddresses.[0].address}}</div>
                 <div class="txt txt--s w-auto">From/To</div>
-                <div class="input mw-200">{{applicantInformStep.applicantAddress.previousAddresses.[0].from}} - {{applicantInformStep.applicantAddress.previousAddresses.[0].to}}</div>
+                <div class="input mw-200 small-text w-auto">{{applicantInformStep.applicantAddress.previousAddresses.[0].from}} - {{applicantInformStep.applicantAddress.previousAddresses.[0].to}}</div>
               </div>
 
               <div class="flex v--end h--betweengap-4">
@@ -78,7 +78,7 @@
               <div class="flex v--end h--between gap-4">
                 <div class="input fullw">{{applicantInformStep.applicantAddress.previousAddresses.[1].address}}</div>
                 <div class="txt txt--s w-auto">From/To</div>
-                <div class="input mw-200">{{applicantInformStep.applicantAddress.previousAddresses.[1].from}} - {{applicantInformStep.applicantAddress.previousAddresses.[1].to}}</div>
+                <div class="input mw-200 small-text w-auto">{{applicantInformStep.applicantAddress.previousAddresses.[1].from}} - {{applicantInformStep.applicantAddress.previousAddresses.[1].to}}</div>
               </div>
 
               <div class="flex v--end h--between gap-4">
@@ -102,7 +102,7 @@
                 <div class="txt txt--s w-auto">Applicant's Employer</div>
                 <div class="input fullw">{{familyAndEmploymentStep.employment.currentEmployer}}</div>
                 <div class="txt txt--s w-auto">From</div>
-                <div class="input mw-200">{{familyAndEmploymentStep.employment.from}}</div>
+                <div class="input mw-200 small-text w-auto">{{familyAndEmploymentStep.employment.from}}</div>
               </div>
               <div class="txt txt--s mt-8">
                 <p>Previous Employer (If less than 5 years at current employment )</p>
@@ -110,14 +110,14 @@
               <div class="flex v--end h--between gap-4">
                 <div class="input fullw">{{familyAndEmploymentStep.employment.previousEmployers.[0].employer}}</div>
                 <div class="txt txt--s w-auto">From/To</div>
-                <div class="input mw-200">{{familyAndEmploymentStep.employment.previousEmployers.[0].from}} - {{familyAndEmploymentStep.employment.previousEmployers.[0].to}}</div>
+                <div class="input mw-200 small-text">{{familyAndEmploymentStep.employment.previousEmployers.[0].from}} - {{familyAndEmploymentStep.employment.previousEmployers.[0].to}}</div>
               </div>
 
               <div class="flex v--end h--between gap-4">
                 <div class="txt txt--s w-auto">Previous Employer</div>
                 <div class="input w-55">{{familyAndEmploymentStep.employment.previousEmployers.[1].employer}}</div>
                 <div class="txt txt--s w-auto">From</div>
-                <div class="input mw-150">{{familyAndEmploymentStep.employment.previousEmployers.[1].from}} - {{familyAndEmploymentStep.employment.previousEmployers.[1].to}}</div>
+                <div class="input mw-200 small-text">{{familyAndEmploymentStep.employment.previousEmployers.[1].from}} - {{familyAndEmploymentStep.employment.previousEmployers.[1].to}}</div>
               </div>
 
               <!--checkboxes-->
