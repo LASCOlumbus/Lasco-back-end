@@ -460,6 +460,88 @@ export class CreatePdfDto {
   },
   "meta": "extra metadata"
 }
+
+
+
+
+{
+   "type":"application_for_appointment_of_guardian_of_alleged_incompetent",
+   "data":{
+      "caseDetailsStep":{
+         "guardianName":"test name",
+         "caseNumber":"123123123",
+         "relationshipToWard":"Initial appointment"
+      },
+      "wardInformStep":{
+         "wardName":"test full name",
+         "wardDob":"05 / 04 / 1994",
+         "wardAddress":"test city",
+         "explanationNeedsOfGuardian":"some description",
+         "isWardNeedsInterpreterForEnglish":true,
+         "wardSpeakLanguage":"Afar",
+         "wardPrescriptions":"asd sad as d",
+         "isWardHasMilitaryService":true,
+         "militaryService":{
+            "militaryId":"12312213",
+            "branchService":"asdasd",
+            "startDateOfService":"05 / 04 / 2026",
+            "endDateOfService":"05 / 30 / 2026"
+         }
+      },
+      "assetsAndIncomeStep":{
+         "estimatedValuePersonalProperty":23,
+         "estimatedValueRealEstate":12,
+         "annualRentsReceived":123,
+         "otherAnnualIncome":1230,
+         "bondAmount":23,
+         "publicPrivateAssistance":" sad sad sad",
+         "isWardHasRepresentativePayee":true,
+         "payeeName":"asdasdasd",
+         "payeeAddress":"asd sad asd sad s"
+      },
+      "guardianshipTypeStep":{
+         "guardianResponsibility":"Personal and medical needs",
+         "typeGuardianship":[
+            "Person and estate",
+            "Interim"
+         ],
+         "limitedPowersRequested":"",
+         "timePeriodRequested":"Limited to a specific time period",
+         "specifyTimePeriod":{
+            "start":"05 / 15 / 2026",
+            "end":"05 / 30 / 2026"
+         }
+      },
+      "applicantInformStep":{
+         "applicantName":"as asd asd ",
+         "applicantDob":"05 / 15 / 2026",
+         "applicantPhone":"+380689983456",
+         "applicantEmail":"asdasd@asd.asd",
+         "applicantAddress":"asd asda d",
+         "state":"AZ",
+         "zip":"12312312",
+         "city":"new york",
+         "applicantRelationshipToWard":"brother",
+         "isApplicantRequiringInterpreter":true,
+         "applicantSpeakLanguage":"Aragonese"
+      },
+      "legalDeclarationsStep":{
+         "isApplicantHasBeenChargedWithViolence":true,
+         "conviction":{
+            "convictionName":"tesadt sd",
+            "convictionDate":"05 / 05 / 2026",
+            "convictionPlace":"as sa das d"
+         },
+         "isGuardianHasBeenNominatedInWriting":true,
+         "nominatedPersonName":"asd sa dsad ",
+         "isNominatedPersonContactInfoListedOnForm15":true,
+         "isGuardianNominatedDocumentAttached":true,
+         "isNotAdmin":true,
+         "isApplicantAgreed":true
+      }
+   },
+   "meta":"extra metadata"
+}
 */
 
 
